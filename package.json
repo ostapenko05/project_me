@@ -1,16 +1,21 @@
 {
-  "name": "_project",
-  "version": "1.0.0",
-  "description": "Ostapenko Arkadiy",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "normalize.css": "^8.0.1",
-    "vue": "^2.6.10"
-  }
+    "name": "project",
+    "version": "1.0.0",
+    "description": "Ostapenko Arkadiy",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+        "build": "webpack --output dist/bundle.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "normalize.css": "^8.0.1",
+        "vue": "^2.6.10"
+    },
+    "devDependencies": {
+        "webpack": "^4.41.0",
+        "webpack-cli": "^3.3.9"
+    }
 }
