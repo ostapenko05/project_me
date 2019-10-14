@@ -52,23 +52,23 @@ html(lang="en")
             .about__left
               .user
                 .avatar.user__avatar
-                  +image("content/user.jpg", "avatar__pic")
+                  +image("content/arkadiy.png", "avatar__pic")
                 ul.user__desc
                   - 
                     var items = [
-                      ['Проживаю', 'Новосибирск'],
-                      ['Возраст', '13'],
-                      ['Родлся', 'Новосибирск'],
+                      ['Проживаю', 'Уфа'],
+                      ['Возраст', '38 лет'],
+                      ['Родился', '24 мая 1981'],
                     ]
                   each item in items
                     li.user__desc-item
                       .user__key #{item[0]}
                       .user__value #{item[1]}
             .about__right
-              h4.about__prolog Привет
-              h2.about__title Владимир Астаханов
-              .about__text Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ad, facilis vero deleniti obcaecati iusto consequatur dolor fugit itaque cupiditate veniam porro maiores eaque voluptate inventore voluptatibus! Eos, dolor ad.
-              .about__ps Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas similique ipsa laboriosam repellat exercitationem dolorum enim rem, asperiores debitis quaerat, a, vel in neque impedit magnam perferendis? Voluptatibus, quasi. Mollitia?
+              h4.about__prolog Привет, меня зовут
+              h2.about__title Аркадий Остапенко
+              .about__text Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные продукты.
+              .about__ps Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежув нём контент. А пока посмотрите, как тут все классно и красиво!
 
       .triangles
         svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
@@ -80,9 +80,9 @@ html(lang="en")
       .values
         .container
           .values__title
-            h2.section-title.values__title-text Чем я могу быть вам полезен
+            h2.section-title.values__title-text Чем я могу быть полезен Вам
             .values__desc
-              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa veniam earum cupiditate ut, soluta deleniti vel deserunt aliquid nisi nihil molestiae rerum nesciunt labore enim inventore ipsum, cum pariatur corporis.
+              p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежув нём контент. А пока посмотрите, как тут все классно и красиво!
 
           - 
             var skills = [
@@ -124,9 +124,9 @@ html(lang="en")
               ul.tags
                 li.tags__item #{tag}
           .works__text
-            h3.works__title Сайт школы
+            h3.works__title Сайт школы образования
             .works__desc-text
-              p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam dolorum nulla placeat cumque nostrum commodi ad numquam dolores distinctio officiis molestiae, assumenda omnis ut voluptas itaque eligendi mollitia earum. Tenetur.
+              p Этот парень проходил обучение вэб-разработки не где-то, а в LoftSchool! Два месяца только самых тяжелых испытаний и бессоных ночей!
             a.iconed-link
               .iconed-link__icon
-              .iconed-link__text
+              .iconed-link__text Посмотреть сайт
