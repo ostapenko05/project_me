@@ -10,11 +10,22 @@ html(lang="en")
   body
      .wrapper
       .welcome-section
+        +image("content/paralax1.jpg", "paralax__pic")
         section.hero
+          
           .container.hero__container
             header.header.hero__header
               .hero__logo
                 .logo ОA
+              
+              .hero__links 
+                nav.nav
+                  - var menu = ['Главная', "Обо мне", "Навыки", "Работы","Отзывы","Связаться"]
+                  ul.nav__list
+                    each item in menu
+                      li.nav__item
+                        a(href="").nav__link #{item}
+
               .hero__menu
                 - var icons = ['insta', 'vk', 'github']
                 ul.socials
@@ -23,20 +34,18 @@ html(lang="en")
                       a(href="").socials__link
                         +icon(`${item}`, 'socials__icon')
 
-              .hero__links 
-                nav.nav
-                  - var menu = ['Главная', "Обо мне", "Навыки", "Работы"]
-                  ul.nav__list
-                    each item in menu
-                      li.nav__item
-                        a(href="").nav__link #{item}
             .hero__content
               .user-info
-                h1.user-info__desc Личный сайт...
-                .user-info__username Владимир Астаханов
+                .user-info__title
+                  h3.user-info__desc Личный сайт 
+                  h3.user-info__desc вэб разработчика
+                .user-info__title-name
+                  h1.user-info__username Аркадий 
+                  h1.user-info__username Остапенко
 
             .hero__btns
               .scroll-down-btns Скроллить
+              .scroll <svg height="15pt" viewBox="-90 0 512 512" width="15pt" xmlns="http://www.w3.org/2000/svg"><path d="m166.238281 430.144531-89.769531-94.898437 29.058594-27.488282 60.632812 64.097657 60.273438-64.058594 29.132812 27.410156zm165.761719-38.144531v-272c0-66.167969-53.832031-120-120-120h-92c-66.167969 0-120 53.832031-120 120v272c0 66.167969 53.832031 120 120 120h92c66.167969 0 120-53.832031 120-120zm-120-352c44.113281 0 80 35.886719 80 80v272c0 44.113281-35.886719 80-80 80h-92c-44.113281 0-80-35.886719-80-80v-272c0-44.113281 35.886719-80 80-80zm-46 41c-11.046875 0-20 8.953125-20 20s8.953125 20 20 20 20-8.953125 20-20-8.953125-20-20-20zm0 80c-11.046875 0-20 8.953125-20 20s8.953125 20 20 20 20-8.953125 20-20-8.953125-20-20-20zm0 80c-11.046875 0-20 8.953125-20 20s8.953125 20 20 20 20-8.953125 20-20-8.953125-20-20-20zm0 0"/></svg>
           
         section.about
           .container.about__container
