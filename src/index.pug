@@ -100,15 +100,13 @@ html(lang="en")
                       svg(viewBox="0 0 200 200" preserveAspectRatio="none").skill__shape
                         circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position--under
                         circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position--above
-                        
                       .skill__title #{skill}
                     
       .works
-        +image("content/slider.png", "slider__pic")
         h2.section-title Мои работы
         .works__left
           .slider
-            img().slider__fillpic
+            +image("content/slider.png", "slider__pic")
             .slider__preview
               ul.previews
                 - for (var i = 0; i < 3; i++)
@@ -132,3 +130,35 @@ html(lang="en")
             a.iconed-link
               .iconed-link__icon
               .iconed-link__text Посмотреть сайт
+      .aboutme.aboutme__container
+        .aboutme__title Что обо мне говорят
+          .button.slider-butn
+          .button.slider-butn
+
+      .form.form__container
+      +image("content/paralax2.jpg", "paralax__pic-down")
+
+      .footer.footer__container
+        .user-info
+          .user-info__title
+            h3.user-info__desc Личный сайт 
+            h3.user-info__desc вэб разработчика
+          .user-info__title-name
+            h1.user-info__username Аркадий 
+            h1.user-info__username Остапенко
+        .fotter__links 
+                nav.nav
+                  - var menu = ['Главная', "Обо мне", "Навыки", "Работы","Отзывы","Связаться"]
+                  ul.nav__list
+                    each item in menu
+                      li.nav__item
+                        a(href="").nav__link #{item}
+        .fotter__menu
+                - var icons = ['insta', 'vk', 'github']
+                ul.socials
+                  each item, index in icons
+                    li.socials__item(class=`${index === 1 ? 'active' : ''}`)
+                      a(href="").socials__link
+                        +icon(`${item}`, 'socials__icon')
+        .about__ps Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.
+        .about__text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете.
