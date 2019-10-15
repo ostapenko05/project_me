@@ -78,15 +78,16 @@ html(lang="en")
 
 
       .values
-        .container
+        .container.container__values
+          +image("content/bagage.png", "bagage__pic")
           .values__title
-            h2.section-title.values__title-text Чем я могу быть полезен Вам
+            h1.section-title.values__title-text Чем я могу быть полезен Вам
             .values__desc
               p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежув нём контент. А пока посмотрите, как тут все классно и красиво!
 
           - 
             var skills = [
-              ['frontend', ['html', 'css', 'js']],
+              ['front-end', ['html', 'css', 'js']],
               ['workflow', ['git', 'terminal', 'gulp']],
             ]
           each item in skills 
@@ -98,11 +99,12 @@ html(lang="en")
                     .skill
                       svg(viewBox="0 0 200 200" preserveAspectRatio="none").skill__shape
                         circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position--under
-                        //- circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position--above
-                        linear-gradient()
+                        circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position--above
+                        
                       .skill__title #{skill}
                     
       .works
+        +image("content/slider.png", "slider__pic")
         h2.section-title Мои работы
         .works__left
           .slider

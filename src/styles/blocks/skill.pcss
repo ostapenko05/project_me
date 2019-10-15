@@ -1,7 +1,84 @@
-.skill__shape {
-    width: 200px;
-    height: 200px;
-    fill: transparent;
-    stroke: red;
-    stroke-width: 4px;
+.container__values {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.bagage__pic {
+  position: absolute;
+  margin: 0 0 0 -5%;
+}
+
+.values__title {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  margin-left: 25%;
+}
+
+.values__desc {
+  margin-bottom: 5%;
+  & :last-child {
+    margin-bottom: 0%;
   }
+}
+
+.skills-row {
+  position: relative;
+}
+
+.skills-row__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.skills-row__item {
+  margin-bottom: 5%;
+}
+
+.values__title-text {
+  margin-bottom: 5%;
+  font-weight: 800;
+}
+
+.skills-row__title {
+  margin-left: 25%;
+  font-weight: 800;
+}
+
+.skill {
+  position: relative;
+}
+
+.skill__title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.skill__shape {
+  width: 150px;
+  height: 150px;
+  fill: transparent;
+  stroke: rgb(70,77,98);
+  stroke-width: 3px;
+  transform: rotate(180deg);
+}
+
+.skill__circle {
+  stroke-width: 15px;
+}
+
+.skill__circle--position--under {
+  stroke-width: 6px;
+  opacity:.5;
+}
+.skill__circle--position--above {
+  stroke-dasharray: calc(250*1);
+  stroke-width: 15px;
+  stroke: blue;
+}
