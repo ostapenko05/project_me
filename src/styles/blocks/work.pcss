@@ -1,0 +1,142 @@
+.work__content {
+    height:40vh;
+    display: flex;
+    flex-direction: row;
+    padding: 0 5%;
+    position: relative;
+}
+
+.section-title {
+    padding-left: 5%; 
+    margin-bottom: 3%;
+    font-weight: 800;
+    font-family: sans-serif;
+
+}
+
+.slider {
+    position: relative;
+}
+
+.slider__preview {
+    margin: 0 0;
+    position: absolute;
+    top: 12%;
+    left: 70%;
+}
+
+.works__left {
+    width: 120%;
+    &::after {
+        content: "2";
+        font-size: 300px;
+        font-family: sans-serif;
+        font-weight: 800;
+        position: absolute;
+        opacity: 0.1;
+        z-index: -30;
+       top: -20%;
+       left: 48%;
+    }
+}
+
+.slider__buttons {
+    text-align: end;
+    margin: 0 1.5% 0 0;
+}
+
+.slider-buttons-item {
+    margin: 0 0;
+    width: 100px;
+    height: 50px;
+}
+
+.slider-buttons__item {
+    position: relative;
+    margin: 0 0;
+    width: 50px;
+    height: 50px;
+    border: solid 1px rgb(70, 77, 98);
+    background: rgb(59, 62, 69);
+}
+
+.arrow-up {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border: solid 2px #ffffff;
+    border-right: 2px #fff;
+    border-top: 2px #fff;
+    transform: rotate(135deg);
+    position: absolute;
+    top: 45%;
+    left: 40%;
+    transform: translate( 135deg, -50%, -50%);
+    &:hover {
+        border: rgb(230, 230, 230);
+    }
+}
+
+.arrow-down {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border: solid 2px #ffffff;
+    border-left: 2px #fff;
+    border-bottom: 2px #fff;
+    transform: rotate(135deg);
+    position: absolute;
+    top: 35%;
+    left: 40%;
+    transform: translate( 135deg, -50%, -50%);
+    &:hover {
+        border: rgb(230, 230, 230);
+    }
+}
+
+.works__title {
+    font-weight: 800;
+    font-family: sans-serif;
+}
+
+.works__tags {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 25%;
+}
+
+.tags__item {
+    background: rgb(243, 245, 249);
+    border-radius: 20px;
+    padding: 15px 15px;
+}
+
+.works__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.works__text {
+    padding-left: 25%;
+}
+
+.works__desc-text {
+    padding-left: 25%;
+}
+
+.iconed-link {
+    padding-left: 25%;
+    color: rgb(98, 120, 213);
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+}
+
+.iconed-link__icon {
+    fill: rgb(98, 120, 213);
+    width: 15px;
+    height: 15px;
+    margin-right: 5%;
+}

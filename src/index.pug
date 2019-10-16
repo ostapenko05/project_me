@@ -104,41 +104,91 @@ html(lang="RU_ru")
                       
         section.works
           h2.section-title Мои работы
-          .works__left
-            .slider
-              +image("content/slider.png", "slider__pic")
-              .slider__preview
-                ul.previews
-                  - for (var i = 0; i < 3; i++)
-                    li.previews__item
-                      img.previews__pic
-              .slider__buttons
-                .slider-button
-                  button.slider-buttons__item.slider-buttons__item--slide--prev 
-                  button.slider-buttons__item.slider-buttons__item--slide--next
+          .work__content
+            .works__left
+              .slider
+                +image("content/slider.png", "slider__pic")
+                .slider__preview
+                  +image("content/preview1.jpg", "previews__pic")
+                  +image("content/preview2.jpg", "previews__pic")
+                  +image("content/preview3.jpg", "previews__pic")
+                  //- ul.previews
+                  //-   - for (var i = 0; i < 3; i++)
+                  //-     li.previews__item
+                  //-     img.previews__pic
+                .slider__buttons
+                  .slider-button
+                    button.slider-buttons__item.slider-buttons__item--slide--prev 
+                      .arrow-up
+                    button.slider-buttons__item.slider-buttons__item--slide--next
+                      .arrow-down
 
-          .works__right
-            .works__tags
-              - var tags = ['html', 'css', 'javascript']
-              each tag in tags
-                ul.tags
-                  li.tags__item #{tag}
-            .works__text
-              h3.works__title Сайт школы образования
+            .works__right
+              .works__tags
+                - var tags = ['html', 'css', 'javascript']
+                each tag in tags
+                  ul.tags
+                    li.tags__item #{tag}
+              .works__text
+                h3.works__title Сайт школы образования
               .works__desc-text
-                p Этот парень проходил обучение вэб-разработки не где-то, а в LoftSchool! Два месяца только самых тяжелых испытаний и бессоных ночей!
+                  p Этот парень проходил обучение вэб-разработки не где-то, а в LoftSchool! Два месяца только самых тяжелых испытаний и бессоных ночей!
               a.iconed-link
-                .iconed-link__icon
+                +icon('link', "iconed-link__icon")
                 .iconed-link__text Посмотреть сайт
         
-        section.aboutme.aboutme__container
-          .aboutme__title Что обо мне говорят
-            .button.slider-butn
-            .button.slider-butn
+        section.aboutme
+          +image("content/paralax2.jpg", "paralax__pic-down")
+          .container
+            .aboutme__content
+              .aboutme__title Что обо мне говорят
+              .button.slider-butn
+                .arrow-left
+              .button.slider-butn
+                .arrow-right
+            .reviews__content
+              +icon('quote', "reviews__icon")
+              .reviews__left
+                .reviews__text Этот парень проходил обучение вэб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессоных ночей!
+                .reviews__author
+                  +image("content/dmitry.jpg", "author__pic")
+                  .reviews__title
+                    .reviews__name Ковальчук Дмитрий
+                    .reviews__status Основатель LoftSchool 
+              +icon('quote', "reviews__icon")
+              .reviews__right
+                .reviews__text Это код выдержит любые испытания. Только пожайлуста, не загружайте сайт на слишком старых браузерах.
+                .reviews__author
+                  +image("content/vladimir.jpg", "author__pic")
+                  .reviews__title
+                    .reviews__name Владимир Сабанцев
+                    .reviews__status Преподаватель
 
-        form.container
-        +image("content/paralax2.jpg", "paralax__pic-down")
-            .form__title связаться со мной
+          .form
+            .form__title Связаться со мной
+            form(action="" method="POST")
+              .form__inputs
+                .form__input
+                  p.form__text Введите ваше имя
+                  +icon('user', "iconed__user")
+                  input(type="text" name="name" placeholder="").input__elem
+                  .form__line
+                  
+                .form__input
+                  p.form__text Введите ваш e-mail
+                  +icon('envelope', "iconed__mail")
+                  input(type="text" name="mail" placeholder="").input__elem
+                  .form__line
+
+              
+              input.form__input-text(type="text" name="text" placeholder="").input__elem
+              .form__line-text
+
+              .form__btn
+                input(type="submit").form__btn-style
+
+              
+                           
 
         footer.footer__container
           .footer__left
@@ -172,7 +222,7 @@ html(lang="RU_ru")
                   -var icons = ['insta', 'vk', 'github']
                   ul.socials
                     each item, index in icons
-                      li.socials__item(class=`${index === 1 ? 'active' : ''}`)
+                      li.socials__item.social__item-footer(class=`${index === 1 ? 'active' : ''}`)
                         a(href="").socials__link
                           +icon(`${item}`, 'socials__icon')
 

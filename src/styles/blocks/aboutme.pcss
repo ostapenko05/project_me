@@ -1,0 +1,115 @@
+.aboutme {
+    position: relative;
+    height: 135vh;
+}
+
+.paralax__pic-down {
+    width: 100%;
+    position: absolute;
+    margin-top: 2%;
+}
+
+.aboutme__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    position: relative;
+    padding-top: 200px;
+    
+}
+
+.aboutme__title {
+    font-family: sans-serif;
+    font-weight: 800;
+    font-size: 36px;
+    margin: 0 5%;
+}
+
+.slider-butn {
+    position: relative;
+    height: 40px;
+    width: 40px;
+    border: solid 2px rgb(181, 181, 181);
+    border-radius: 50%;
+    margin: 1% 2% 0 0; 
+    cursor: pointer;
+}
+
+.arrow-left {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border: solid 2px rgb(181, 181, 181);
+    border-right: 2px rgb(181, 181, 181);
+    border-top: 2px rgb(181, 181, 181);
+    transform: rotate(45deg);
+    position: absolute;
+    top: 35%;
+    left: 35%;
+    transform: translate( 135deg, -50%, -50%);
+    &:hover {
+        border: rgb(230, 230, 230);
+    }
+}
+
+.arrow-right {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border: solid 2px rgb(181, 181, 181);
+    border-left: 2px rgb(181, 181, 181);
+    border-bottom: 2px rgb(181, 181, 181);
+    transform: rotate(45deg);
+    position: absolute;
+    top: 35%;
+    left: 35%;
+    transform: translate( 135deg, -50%, -50%);
+    &:hover {
+        border: rgb(230, 230, 230);
+    }
+}
+
+.reviews__content {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    padding: 10% 0%;
+}
+
+.reviews__left {
+    margin-right: 2%;
+    width: 50%;
+}
+
+.reviews__right {
+    width: 50%;
+}
+
+.reviews__icon {
+    width: 200px;
+    height: 80px;
+    fill: rgb(181, 181, 181);
+    opacity: .1;
+}
+
+.reviews__author {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.reviews__text {
+    font-family: sans-serif;
+    margin-bottom: 15%;
+}
+
+.author__pic {
+    border-radius: 50%;
+    margin-right: 5%;
+}
+
+.reviews__name {
+    margin-bottom: 5%;
+    font-weight: 800;
+}
