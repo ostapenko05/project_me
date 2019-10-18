@@ -1,12 +1,22 @@
 .aboutme {
     position: relative;
-    height: 135vh;
+    height: 160%;
+
 }
+
+.container__aboutme {
+    width: 90%;
+    margin-bottom: 10%;
+}
+
 
 .paralax__pic-down {
     width: 100%;
     position: absolute;
     margin-top: 2%;
+    @include desktopHd {
+        margin-top: 4%;
+    }
 }
 
 .aboutme__content {
@@ -15,21 +25,21 @@
     justify-content: flex-start;
     position: relative;
     padding-top: 200px;
-    
 }
 
 .aboutme__title {
     font-family: sans-serif;
     font-weight: 800;
     font-size: 36px;
-    margin: 0 5%;
+    margin: 0 5% 0 0;
 }
 
 .slider-butn {
     position: relative;
     height: 40px;
     width: 40px;
-    border: solid 2px rgb(181, 181, 181);
+    border: solid 2px #464d62;
+    opacity: .7;
     border-radius: 50%;
     margin: 1% 2% 0 0; 
     cursor: pointer;
@@ -37,15 +47,15 @@
 
 .arrow-left {
     display: block;
-    width: 10px;
-    height: 10px;
-    border: solid 2px rgb(181, 181, 181);
-    border-right: 2px rgb(181, 181, 181);
-    border-top: 2px rgb(181, 181, 181);
+    width: 8px;
+    height: 8px;
+    border: solid 2px #464d62;
+    border-right: 2px #464d62;
+    border-top: 2px #464d62;
     transform: rotate(45deg);
     position: absolute;
-    top: 35%;
-    left: 35%;
+    top: 40%;
+    left: 40%;
     transform: translate( 135deg, -50%, -50%);
     &:hover {
         border: rgb(230, 230, 230);
@@ -54,15 +64,15 @@
 
 .arrow-right {
     display: block;
-    width: 10px;
-    height: 10px;
-    border: solid 2px rgb(181, 181, 181);
-    border-left: 2px rgb(181, 181, 181);
-    border-bottom: 2px rgb(181, 181, 181);
+    width: 8px;
+    height: 8px;
+    border: solid 2px #464d62;
+    border-left: 2px #464d62;
+    border-bottom: 2px #464d62;
     transform: rotate(45deg);
     position: absolute;
-    top: 35%;
-    left: 35%;
+    top: 40%;
+    left: 40%;
     transform: translate( 135deg, -50%, -50%);
     &:hover {
         border: rgb(230, 230, 230);
@@ -88,8 +98,8 @@
 
 .reviews__icon {
     width: 200px;
-    height: 80px;
-    fill: rgb(181, 181, 181);
+    height: 100px;
+    fill: #464d62;
     opacity: .1;
 }
 
@@ -100,8 +110,12 @@
 }
 
 .reviews__text {
+    height: 50%;
     font-family: sans-serif;
     margin-bottom: 15%;
+    /* text-transform: uppercase; */
+    /* letter-spacing: 3px; */
+    line-height: 3;
 }
 
 .author__pic {
