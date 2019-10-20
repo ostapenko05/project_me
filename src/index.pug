@@ -84,23 +84,28 @@ html(lang="RU_ru")
               h1.section-title.values__title-text Чем я могу быть полезен Вам
               .values__desc
                 p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежув нём контент. А пока посмотрите, как тут все классно и красиво!
-
-            - 
-              var skills = [
-                ['front-end', ['html', 'css', 'js']],
-                ['workflow', ['git', 'terminal', 'gulp']],
-              ]
-            each item in skills 
-              li.user-skills__item.skills-row 
-                h3.skills-row__title #{item[0]}
-                ul.skills-row__list
-                  each skill in item[1]
-                    li.skills-row__item
-                      .skill
-                        svg(viewBox="0 0 200 200" preserveAspectRatio="none").skill__shape
-                          circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position--under
-                          circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position--above
-                        .skill__title #{skill}
+              .skills-user  
+                -
+                  var skills = [
+                    {title: 'Front-end', skills: [{name: 'html', percent: 90}, {name: 'css', percent: 80}, {name: 'JavaScript', percent: 70}, {name: 'jquery и Vue.js', percent: 60}]},
+                    {title: 'Workflow', skills: [{name: 'GIT', percent: 90}, {name: 'Terminal', percent: 15}, {name: 'GULP', percent: 10}, {name: 'Webpack', percent: 5}]}
+                  ]
+              each group in skills
+                .skills__row
+                  .skills-group
+                    .skills-group__title #{group.title}
+                    .skills-group__items
+                      each skill in group.skills
+                        .skills-group__item
+                          .skill
+                            svg.skill-chart(viewBox="0 0 100 100")
+                              -var r = 40
+                              circle.skill__circle.skill__circle_under(cx="50" cy="50" r=r)
+                              circle.skill__circle.skill__circle_above(cx="50" cy="50" r=r stroke-dasharray=`${2 * Math.PI * r}` stroke-dashoffset=`${2 * Math.PI * r * (100 - skill.percent) / 100}`)
+                              linearGradient(id="gradient" x1="0" y1="0" x2="100%" y2="100%")
+                                stop(offset="0%" stop-color="#00f" )
+                                stop(offset="100%" stop-color="darkviolet")
+                            .skill__name #{skill.name}
                       
         section.works
           h2.section-title Мои работы
@@ -112,10 +117,6 @@ html(lang="RU_ru")
                   +image("content/preview1.jpg", "previews__pic")
                   +image("content/preview2.jpg", "previews__pic")
                   +image("content/preview3.jpg", "previews__pic")
-                  //- ul.previews
-                  //-   - for (var i = 0; i < 3; i++)
-                  //-     li.previews__item
-                  //-     img.previews__pic
                 .slider__buttons
                   .slider-button
                     button.slider-buttons__item.slider-buttons__item--slide--prev 
@@ -171,38 +172,35 @@ html(lang="RU_ru")
                 .form__input
                   p.form__text Введите ваше имя
                   +icon('user', "iconed__user")
-                  input(type="text" name="name" placeholder="").input__elem
+                  input.input__back(type="text" name="name" placeholder="").input__elem
                   .form__line
                   
                 .form__input
                   p.form__text Введите ваш e-mail
                   +icon('envelope', "iconed__mail")
-                  input(type="text" name="mail" placeholder="").input__elem
+                  input.input__back(type="text" name="mail" placeholder="").input__elem
                   .form__line
 
-              
+              +icon('message', "iconed__mail")
               input.form__input-text(type="text" name="text" placeholder="").input__elem
               .form__line-text
 
               .form__btn
                 input(type="submit").form__btn-style
 
-              
-                           
-
         footer.footer__container
           .footer__left
           
             .footer-info
               p &#169 2019
-
+            .footer__title
               .footer-info__title-name
-                h1.footer-info__username Аркадий 
-                h1.footer-info__username Остапенко
+                h1.footer-info__username аркадий 
+                h1.footer-info__username остапенко
 
               .footer-info__title
                 h3.footer-info__desc Личный сайт 
-                h3.footer-info__desc вэб разработчика
+                h3.footer-info__desc вэб-разработчика
               
           .footer__right
 
