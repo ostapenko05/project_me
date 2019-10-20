@@ -1,9 +1,12 @@
 .work__content {
-    height:30vh;
+    height:50vh;
     display: flex;
     flex-direction: row;
     padding: 0 5%;
     position: relative;
+    @include desktop {
+        height: 50vh;
+    }
 }
 
 .section-title {
@@ -20,7 +23,6 @@
 
 .slider__pic {
     width: 100%;
-    z-index: -10;
 }
 
 .slider__preview {
@@ -28,12 +30,15 @@
     position: absolute;
     top: 36%;
     left: 80%;
+    @include desktop {
+        top: 34%;
+    }
 }
 
 .works__left {
     width: 50%;
     &::after {
-        content: "2";
+        content: "4";
         font-size: 300px;
         font-family: sans-serif;
         font-weight: 800;
@@ -42,6 +47,9 @@
         z-index: -30;
        top: -20%;
        left: 48%;
+       @include desktop {
+        content: "2";
+        }
     }
 }
 

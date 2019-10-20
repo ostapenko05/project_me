@@ -1,7 +1,10 @@
 .container__values {
-  height: 50vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
+  @include desktop {
+    height: 90vh;
+  }
 }
 
 .bagage__pic {
@@ -57,7 +60,6 @@
 
 .skill__circle_above {
   stroke-width: 10px;
-  stroke: blue;
   stroke: url(#gradient);
 }
 
