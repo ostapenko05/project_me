@@ -114,9 +114,15 @@ html(lang="RU_ru")
               .slider
                 +image("content/slider.png", "slider__pic")
                 .slider__preview
-                  +image("content/preview1.jpg", "previews__pic")
-                  +image("content/preview2.jpg", "previews__pic")
-                  +image("content/preview3.jpg", "previews__pic")
+                  -var images = ['content/preview1.jpg', 'content/preview2.jpg', 'content/preview3.jpg']
+                   ul.images
+                    each image, index in images
+                      li.image
+                        a(href="").image__link
+                          +image(`${image}`, 'reviews__image')
+                  //- +image("content/preview1.jpg", "previews__pic")
+                  //- +image("content/preview2.jpg", "previews__pic")
+                  //- +image("content/preview3.jpg", "previews__pic")
                 .slider__buttons
                   .slider-button
                     button.slider-buttons__item.slider-buttons__item--slide--prev 
