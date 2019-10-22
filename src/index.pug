@@ -10,21 +10,21 @@ html(lang="RU_ru")
   body
     .wrapper
       .maincontent
-        .welcome-section
+        
           .parallax
-            .parallax__layer(data-speed="0.1")
+            .parallax__layer(data-speed="0.8")
               +image('content/layer-1.png', 'layer__img')
-            .parallax__layer(data-speed="0.2")
+            .parallax__layer(data-speed="0.5")
               +image('content/layer-2.png', 'layer__img')
             .parallax__layer(data-speed="0.3")
               +image('content/layer-3.png', 'layer__img')
-            .parallax__layer(data-speed="0.4")
+            .parallax__layer(data-speed="0.5")
               +image('content/layer-4.png', 'layer__img')
             .parallax__layer(data-speed="0.3")
               +image('content/layer-5.png', 'layer__img')
             .parallax__layer(data-speed="0.2")
               +image('content/layer-6.png', 'layer__img')
-            .parallax__layer(data-speed="0.2")
+            .parallax__layer(data-speed="0.1")
               +image('content/layer-7.png', 'layer__img')
 
           section.hero
@@ -91,6 +91,7 @@ html(lang="RU_ru")
                 polygon(points="0,0 0,100 1000,100")
               svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
                 polygon(points="0,100 1000,100 1000,0")
+            .triangle__down
 
           section.values
             .container.container__values

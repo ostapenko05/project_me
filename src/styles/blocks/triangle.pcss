@@ -2,7 +2,7 @@
 .triangles {
   display: flex;
   margin-top: -39px;
-  color: red;
+  color: #fff;
 }
   
 .triangles__item {
@@ -10,4 +10,13 @@
   display: block;
   height: 100px;
   fill: currentColor;
+}
+
+.triangle__down {
+  width: 100%;
+  height: 50%;
+  background-color: #fff;
+  @include retina {
+    height: 70%;
+  }
 }
