@@ -12,6 +12,11 @@
 .user-info {
   display: flex;
   flex-direction: row;
+  @include desktopHd {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .user-info__username {
@@ -19,7 +24,9 @@
   font-size: 45px;
   font-weight: 800;
   margin: 0 0;
-  flex: 2;
+  @include desktopHd {
+    text-align: center;
+  }
 }
 
 .user-info__desc {
@@ -29,10 +36,16 @@
   opacity: .5;
   text-align: end;
   margin-right: 50px;
+  @include desktopHd {
+    text-align: center;
+  }
 }
 
 .user-info__title {
   padding-top: 5%;
+  @include desktopHd {
+    text-align: center;
+  }
 }
 
 .user__value {
