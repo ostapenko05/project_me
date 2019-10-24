@@ -158,7 +158,7 @@ html(lang="RU_ru")
                   .iconed-link__text Посмотреть сайт
           
           section.aboutme
-            +image("content/paralax2.jpg", "paralax__pic-down")
+            
             .container.container__aboutme
               .aboutme__content
                 .aboutme__title Что обо мне говорят
@@ -206,6 +206,19 @@ html(lang="RU_ru")
 
                 .form__btn
                   input(type="submit").form__btn-style
+            .parallax__about
+              .parallax__budda(data-speed="0.5")
+                +image('content/Budda-layer-1.png', 'layer__budda')
+              .parallax__budda(data-speed="0.5")
+                +image('content/Budda-layer-2.png', 'layer__budda')
+              .parallax__budda(data-speed="0.4")
+                +image('content/Budda-layer-3.png', 'layer__budda')
+              .parallax__budda(data-speed="0.3")
+                +image('content/Budda-layer-4.png', 'layer__budda')
+              .parallax__budda(data-speed="0.2")
+                +image('content/Budda-layer-5.png', 'layer__budda')
+              .parallax__budda(data-speed="0.1")
+                +image('content/Budda-layer-6.png', 'layer__budda')
 
           footer.footer__container
             .footer__left
