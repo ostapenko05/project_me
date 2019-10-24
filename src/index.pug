@@ -158,7 +158,14 @@ html(lang="RU_ru")
                   .iconed-link__text Посмотреть сайт
           
           section.aboutme
+            .triangles__block
+              svg.triangles__item-left(viewBox="0 0 1000 100" preserveAspectRatio="none")
+                polygon(points="0,100 1000,100 1000,0")
+              svg.triangles__item-right(viewBox="0 0 1000 100" preserveAspectRatio="none")
+                polygon(points="0,0 0,100 1000,100")
+              
             
+            +image('content/Budda-layer-1.png', 'budda__fon')
             .container.container__aboutme
               .aboutme__content
                 .aboutme__title Что обо мне говорят
@@ -207,8 +214,6 @@ html(lang="RU_ru")
                 .form__btn
                   input(type="submit").form__btn-style
             .parallax__about
-              .parallax__budda(data-speed="0.5")
-                +image('content/Budda-layer-1.png', 'layer__budda')
               .parallax__budda(data-speed="0.5")
                 +image('content/Budda-layer-2.png', 'layer__budda')
               .parallax__budda(data-speed="0.4")
