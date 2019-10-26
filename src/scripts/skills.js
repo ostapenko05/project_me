@@ -3,11 +3,11 @@ import Vue from "vue";
 const skill = {
     template: "#skill",
     props: ["skillName", "skillPercent"],
-    method: {
+    methods: {
         drawColoredCircle() {
             const circle = this.$refs["color-circle"];
             const dashArray = parseInt(
-                getComputedStyle(circle).getPropertyValue('stroke-dasharray')
+                getComputedStyle(circle).getPropertyValue("stroke-dasharray")
             );
             const percent = (dashArray / 100) * (100 - this.skillPercent);
 
@@ -31,7 +31,7 @@ new Vue({
     data: () => ({
         skills: []
     }),
-    comments: { skillRow },
+    components: { skillRow },
     created() {
         this.skills = require('../data/skills.json');
     }

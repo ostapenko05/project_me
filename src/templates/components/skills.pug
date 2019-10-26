@@ -11,17 +11,17 @@ script(type="text/x-template")#skills-row
         ul.skills-row__list
             li.skills-row__item(v-for="(skillPercent, skillName) in skill.skills")
                 skill(
-                    :skill__name="skillName"
+                    :skill-name="skillName"
                     :skill-percent="skillPercent"
                 )
 
 script(type="text/x-template")#skill
     .skill
-        svg(viewBox="0 0 100 100" preserveAspectRatio="none").skill__chart
+        svg(viewBox="0 0 100 100" preserveAspectRatio="none").skill__shape
             -var r = 40
-            circle.skill__circle.skill__circle_under(cx="50" cy="50" r=r)
-            circle.skill__circle.skill__circle_above(cx="50" cy="50" r=r ref="color-circle")
+            circle(cx="50" cy="50" r=r).skill__circle.skill__circle_under
+            circle(cx="50" cy="50" r=r ref="color-circle").skill__circle.skill__circle_above
             linearGradient(id="gradient" x1="0" y1="0" x2="100%" y2="100%")
                 stop(offset="0%" stop-color="#00f" )
                 stop(offset="100%" stop-color="darkviolet")
-        .skill__title {{skill.name}}
+        .skill__title {{skillName}}
