@@ -100,28 +100,8 @@ html(lang="RU_ru")
                 h1.section-title.values__title-text Чем я могу быть полезен Вам
                 .values__desc
                   p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежув нём контент. А пока посмотрите, как тут все классно и красиво!
-                .skills-user  
-                  -
-                    var skills = [
-                      {title: 'Front-end', skills: [{name: 'html', percent: 90}, {name: 'css', percent: 80}, {name: 'JavaScript', percent: 70}, {name: 'jquery и Vue.js', percent: 60}]},
-                      {title: 'Workflow', skills: [{name: 'GIT', percent: 90}, {name: 'Terminal', percent: 15}, {name: 'GULP', percent: 10}, {name: 'Webpack', percent: 5}]}
-                    ]
-                each group in skills
-                  .skills__row
-                    .skills-group
-                      .skills-group__title #{group.title}
-                      .skills-group__items
-                        each skill in group.skills
-                          .skills-group__item
-                            .skill
-                              svg.skill-chart(viewBox="0 0 100 100")
-                                -var r = 40
-                                circle.skill__circle.skill__circle_under(cx="50" cy="50" r=r)
-                                circle.skill__circle.skill__circle_above(cx="50" cy="50" r=r stroke-dasharray=`${2 * Math.PI * r}` stroke-dashoffset=`${2 * Math.PI * r * (100 - skill.percent) / 100}`)
-                                linearGradient(id="gradient" x1="0" y1="0" x2="100%" y2="100%")
-                                  stop(offset="0%" stop-color="#00f" )
-                                  stop(offset="100%" stop-color="darkviolet")
-                              .skill__name #{skill.name}
+                .values__widget
+                  #skills-component
                         
           section.works
             h2.section-title Мои работы
@@ -264,3 +244,5 @@ html(lang="RU_ru")
                 .footer__nav-right
                   .footer__text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете.
                   .footer__name Martin Golding
+                  
+    include ./templates/entry.pug
