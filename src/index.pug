@@ -106,36 +106,21 @@ html(lang="RU_ru")
           section.works
             h2.section-title Мои работы
             .work__content
-              .works__left
-                .slider
-                  +image("content/slider.png", "slider__pic")
-                  .slider__preview
-                    -var images = ['content/preview1.jpg', 'content/preview2.jpg', 'content/preview3.jpg']
-                    ul.images
-                      each image, index in images
-                        li.image
-                          a(href="").image__link
-                            +image(`${image}`, 'reviews__image')
-                  .slider__buttons
-                    .slider-button
-                      button.slider-buttons__item.slider-buttons__item--slide--prev 
-                        .arrow-up
-                      button.slider-buttons__item.slider-buttons__item--slide--next
-                        .arrow-down
+              #slider-component
 
-              .works__right
-                .works__tags
-                  - var tags = ['html', 'css', 'javascript']
-                  each tag in tags
-                    ul.tags
-                      li.tags__item #{tag}
-                .works__text
-                  h3.works__title Сайт школы образования
-                .works__desc-text
-                    p Этот парень проходил обучение вэб-разработки не где-то, а в LoftSchool! Два месяца только самых тяжелых испытаний и бессоных ночей!
-                a.iconed-link
-                  +icon('link', "iconed-link__icon")
-                  .iconed-link__text Посмотреть сайт
+              //- .works__right
+              //-   .works__tags
+              //-     - var tags = ['html', 'css', 'javascript']
+              //-     each tag in tags
+              //-       ul.tags
+              //-         li.tags__item #{tag}
+              //-   .works__text
+              //-     h3.works__title Сайт школы образования
+              //-   .works__desc-text
+              //-       p Этот парень проходил обучение вэб-разработки не где-то, а в LoftSchool! Два месяца только самых тяжелых испытаний и бессоных ночей!
+              //-   a.iconed-link
+              //-     +icon('link', "iconed-link__icon")
+              //-     .iconed-link__text Посмотреть сайт
           
           section.aboutme
             .triangles__block
