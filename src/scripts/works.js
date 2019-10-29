@@ -2,7 +2,7 @@ import Vue from "vue";
 
 const thumbs = {
     template: "#slider-thumbs",
-    props: ["works", "currentWork"],
+    props: ["works", "currentWork", "currentIndex"],
     computed: {
         reversedWorks() {
             return [...this.works].reverse();
@@ -61,7 +61,7 @@ new Vue({
     methods: {
         makeArrWithRequaredImages(data) {
             return data.map(item => {
-                const requaredPic = require(`../images/content/${item.photo}`);
+                const requiredPic = require(`../images/content/${item.photo}`);
                 item.photo = requiredPic;
                 return item
             });
