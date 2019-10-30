@@ -2,7 +2,7 @@ import Vue from "vue";
 
 const thumbs = {
     template: "#slider-thumbs",
-    props: ["works", "currentWork", "currentIndex"],
+    props: ["works", "currentWork"],
     computed: {
         reversedWorks() {
             return [...this.works].reverse();
@@ -17,7 +17,7 @@ const btns = {
 const display = {
     template: "#slider-display",
     components: { thumbs, btns },
-    props: ["works", "currentWork"],
+    props: ["works", "currentWork", "currentIndex"],
 };
 
 const tags = {

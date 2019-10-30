@@ -33,7 +33,8 @@ script(type="text/x-template")#slider-thumbs
     //-   a.works-slider__thumb-link
     //-     img(:src="work.photo" alt="").works-slider__thumb
     li.works-slider__thumb-item(
-      v-for="work in works" :key="work.id"
+      v-for="work in reversedWorks" 
+      :key="work.id"
       :class="{active: currentWork.id === work.id }"
     )
       a.works-slider__thumb-link
