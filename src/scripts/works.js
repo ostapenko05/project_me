@@ -75,6 +75,9 @@ new Vue({
                     this.currentIndex--;
                     break;
             }
+        },
+        handlePreviewClick(previewId) {
+            this.currentIndex = previewId - 1;
         }
     },
 
