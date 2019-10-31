@@ -1,7 +1,6 @@
 import Vue from "vue";
 import { swiper, swiperSlide } from 'vue-awesome-swiper';
 
-
 new Vue({
     el: "#reviews-component",
     template: "#reviews",
@@ -17,7 +16,7 @@ new Vue({
                     nextEl: '.reviews__butn_next',
                     prevEl: '.reviews__butn_prev',
                 },
-                loop: true,
+                loop: false,
                 slidesPerView: 2,
                 slidesPerGroup: 2,
                 spaceBetween: 10,
