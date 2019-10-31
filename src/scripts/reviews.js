@@ -1,23 +1,42 @@
 import Vue from "vue";
+import { swiper, swiperSlide } from 'vue-awesome-swiper';
 
-const buttons = {
-    template: "#slider-buttons",
-};
-
-const content = {
-    template: "#slider-content",
-};
 
 new Vue({
-    el: "#reviews-components",
-    template: "#slider-reviews",
-    components: { buttons, content },
-    data: () => ({
-        reviews: [1],
-    }),
+    el: "#reviews-component",
+    template: "#reviews",
+    components: {
+        swiper,
+        swiperSlide
+    },
+    data() {
+        return {
+            reviews: [],
+            swiperOptions: {
+                navigation: {
+                    nextEl: '.reviews__butn_next',
+                    prevEl: '.reviews__butn_prev',
+                },
+                loop: true,
+                slidesPerView: 2,
+                slidesPerGroup: 2,
+                spaceBetween: 10,
+            },
+        };
+    },
+    methods: {
 
+        arrWithreRequiredImage(array) {
+            return array.map(item => {
+                const requiredPic = require(`../images/content/${item["author-pic"]}`);
+                item["author-pic"] = requiredPic;
+
+                return item;
+            });
+        },
+    },
     created() {
-        const data = require('../data/reviews.json');
-
-    }
+        const reviews = require("../data/reviews.json");
+        this.reviews = this.arrWithreRequiredImage(reviews);
+    },
 });

@@ -1,6 +1,7 @@
 .aboutme {
     position: relative;
-    height: 160vh;
+    /* height: 160vh; */
+    padding-top: 3%; 
 }
 
 .budda__fon {
@@ -8,6 +9,7 @@
     z-index: -200;
     height: 100%;
     width: 100%;
+    padding-top: 0.1%;
 }
 
 .parallax__about {
@@ -18,10 +20,10 @@
     position: absolute;
     z-index: -100;
     &:nth-child(1) {
-        bottom: -2000px;
+        bottom: -540px;
     }
     &:nth-child(2) {
-        bottom: -850px;
+        bottom: -150px;
         right: -300px;
     }
 }
@@ -35,8 +37,8 @@
 }
 
 .container__aboutme {
-    width: 90%;
-    margin-bottom: 10%;
+    padding: 0 0;
+    
 }
 
 
@@ -58,102 +60,3 @@
     padding-top: 20%;
 }
 
-.aboutme__title {
-    font-family: sans-serif;
-    font-weight: 800;
-    font-size: 36px;
-    margin: 0 9% 0 0;
-}
-
-.slider-butn {
-    position: relative;
-    height: 50px;
-    width: 50px;
-    border: solid 2px #464d62;
-    opacity: .7;
-    border-radius: 50%;
-    margin: 1% 2% 0 0; 
-    cursor: pointer;
-}
-
-.arrow-left {
-    display: block;
-    width: 8px;
-    height: 8px;
-    border: solid 2px #464d62;
-    border-right: 2px #464d62;
-    border-top: 2px #464d62;
-    transform: rotate(45deg);
-    position: absolute;
-    top: 40%;
-    left: 40%;
-    transform: translate( 135deg, -50%, -50%);
-    &:hover {
-        border: rgb(230, 230, 230);
-    }
-}
-
-.arrow-right {
-    display: block;
-    width: 8px;
-    height: 8px;
-    border: solid 2px #464d62;
-    border-left: 2px #464d62;
-    border-bottom: 2px #464d62;
-    transform: rotate(45deg);
-    position: absolute;
-    top: 40%;
-    left: 40%;
-    transform: translate( 135deg, -50%, -50%);
-    &:hover {
-        border: rgb(230, 230, 230);
-    }
-}
-
-.reviews__content {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    width: 90%;
-    padding: 10% 0%;
-}
-
-.reviews__left {
-    margin-right: 2%;
-    width: 50%;
-}
-
-.reviews__right {
-    width: 50%;
-}
-
-.reviews__icon {
-    width: 100px;
-    height: 80px;
-    fill: #464d62;
-    opacity: .1;
-    margin-right: 3%;
-}
-
-.reviews__author {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.reviews__text {
-    height: 40%;
-    font-family: sans-serif;
-    margin-bottom: 10%;
-    line-height: 2;
-}
-
-.author__pic {
-    border-radius: 50%;
-    margin-right: 8%;
-}
-
-.reviews__name {
-    margin-bottom: 5%;
-    font-weight: 800;
-}
