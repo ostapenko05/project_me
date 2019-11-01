@@ -49,7 +49,27 @@ html(lang="RU_ru")
                       li.socials__item(class=`${index === 1 ? 'active' : ''}`)
                         a(href="").socials__link
                           +icon(`${item}`, 'socials__icon')
-
+                .menu__hamb.menu__hamb_act 
+                    a.menu__hamb-button(href="#")
+                      span.menu__hamb-lines
+                .menu__close
+                  a(href="#").menu__hover-button
+                    span.menu__hover-line.menu__hover-line_active
+                                
+                  nav.nav__close
+                      - var menu = ['Главная', "Обо мне", "Навыки", "Работы","Отзывы","Связаться"]
+                      ul.nav__close-list
+                        each item in menu
+                          li.nav__close-item
+                            a(href="").nav__close-link #{item}
+                  .hero__menu
+                    - var icons = ['insta', 'vk', 'github']
+                    ul.socials
+                      each item, index in icons
+                        li.socials__item(class=`${index === 1 ? 'active' : ''}`)
+                          a(href="").socials__link
+                            +icon(`${item}`, 'socials__icon')
+                              
               .hero__content
                 .user-info
                   .user-info__title
@@ -97,7 +117,7 @@ html(lang="RU_ru")
             .container.container__values
               +image("content/bagage.png", "bagage__pic")
               .values__title
-                h1.section-title.values__title-text Чем я могу быть полезен Вам
+                h1.section__title.values__title-text Чем я могу быть полезен Вам
                 .values__desc
                   p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежув нём контент. А пока посмотрите, как тут все классно и красиво!
                 .values__widget
@@ -129,17 +149,17 @@ html(lang="RU_ru")
                   .form__input
                     p.form__text Введите ваше имя
                     +icon('user', "iconed__user")
-                    input.input__back(type="text" name="name" placeholder="").input__elem
+                    input.input__back(type="text" name="name" placeholder="Ковальчук Дмитрий").input__elem
                     .form__line
                     
                   .form__input
                     p.form__text Введите ваш e-mail
                     +icon('envelope', "iconed__mail")
-                    input.input__back(type="text" name="mail" placeholder="").input__elem
+                    input.input__back(type="text" name="mail" placeholder="LoftSchool@study.com").input__elem
                     .form__line
 
                 +icon('message', "iconed__mail")
-                input.form__input-text(type="text" name="text" placeholder="").input__elem
+                input.form__input-text(type="text" name="text" placeholder="Требуется ваша помощь в создании сайта. Интерисуют сроки и цена вопроса.").input__elem
                 .form__line-text
 
                 .form__btn
