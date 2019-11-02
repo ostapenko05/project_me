@@ -1,6 +1,9 @@
 .form {
   position: relative;
   padding: 10% 40% 30% 20%;
+  @include tablets {
+    padding: 10% 5% 30% 5%;
+  }
 }
 
 .form__title {
@@ -22,6 +25,7 @@
   width: 50%;
   margin: 5% 2% 5% 0;
   border-bottom: 2px #ccc;
+
   &::-webkit-input-placeholder {
     margin-left: 20px;
   }
@@ -30,10 +34,10 @@
 .form__input-text {
   border: 0;
   width: 60%;
-  height: 10%;
   background: transparent;
+
   &::-webkit-input-placeholder {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
     color: $text-color;
     text-indent: 30px;
@@ -44,17 +48,30 @@
 .input__elem {
   border: 4px transparent;
   width: 80%;
-  height: 60px;
+  height: 30px;
+
   &::-webkit-input-placeholder {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
     color: $text-color;
     text-indent: 30px;
+    /* text-align: center; */
   }
 }
 
 .input__elem-text {
   height: 40px;
+  
+  &::-webkit-input-placeholder {
+    font-size: 14px;
+    font-weight: 700;
+    color: $text-color;
+    text-indent: 30px;
+    text-align: center;
+  }
+  @include tablets {
+    width: 50%;
+  }
 }
 
 .form__text {
@@ -95,6 +112,9 @@
 
 .form__btn {
   border: 0;
+  @include tablets {
+    text-align: center;
+  }
 }
 
 .form__btn-style {

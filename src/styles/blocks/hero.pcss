@@ -7,6 +7,27 @@
   height: 100vh;
 }
 
+.pic__up-tablets {
+  display: none;
+  position: absolute;
+  @include tablets {
+    display: block;
+  }
+  @include phones {
+    display: none;
+  }
+}
+
+.pic__up-phones {
+  display: none;
+  position: absolute;
+  width: 100%;
+
+  @include phones {
+    display: block;
+  }
+}
+
 .parallax {
   overflow: hidden;
   @include phones {
@@ -14,19 +35,10 @@
   }
 }
 
-.pic__mountain {
-  
-  @include phones {
-    display: block;
-    position: absolute;
-    z-index: -100;
-  }
-}
-
 .parallax__layer {
   position: absolute;
   z-index: -100;
-  @include phones {
+  @include tablets {
     display: none;
   }
 }
@@ -38,7 +50,6 @@
   max-height: 180vh;
   @include tablets {
     max-height: 250vh;
-    
   }
 }
 

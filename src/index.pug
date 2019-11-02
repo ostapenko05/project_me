@@ -10,7 +10,8 @@ html(lang="RU_ru")
   body
     .wrapper
       .maincontent
-        
+          +image('content/up-phones.png', 'pic__up-phones')
+          +image('content/up-tablets.png', 'pic__up-tablets')
           .parallax
             .parallax__layer(data-speed="0.8")
               +image('content/layer-1.png', 'layer__img')
@@ -28,7 +29,7 @@ html(lang="RU_ru")
               +image('content/layer-7.png', 'layer__img')
           
           section.hero
-            //- +image('content/Mountain Baloon.jpg', '.pic__mountain')
+            
             .container.hero__container
               header.header.hero__header
                 .hero__logo
@@ -82,7 +83,7 @@ html(lang="RU_ru")
               .hero__btns
                 .scroll-down-btns Скроллить
                 .scroll <svg height="15pt" viewBox="-90 0 512 512" width="15pt" xmlns="http://www.w3.org/2000/svg"><path d="m166.238281 430.144531-89.769531-94.898437 29.058594-27.488282 60.632812 64.097657 60.273438-64.058594 29.132812 27.410156zm165.761719-38.144531v-272c0-66.167969-53.832031-120-120-120h-92c-66.167969 0-120 53.832031-120 120v272c0 66.167969 53.832031 120 120 120h92c66.167969 0 120-53.832031 120-120zm-120-352c44.113281 0 80 35.886719 80 80v272c0 44.113281-35.886719 80-80 80h-92c-44.113281 0-80-35.886719-80-80v-272c0-44.113281 35.886719-80 80-80zm-46 41c-11.046875 0-20 8.953125-20 20s8.953125 20 20 20 20-8.953125 20-20-8.953125-20-20-20zm0 80c-11.046875 0-20 8.953125-20 20s8.953125 20 20 20 20-8.953125 20-20-8.953125-20-20-20zm0 80c-11.046875 0-20 8.953125-20 20s8.953125 20 20 20 20-8.953125 20-20-8.953125-20-20-20zm0 0"/></svg>
-            
+             
           section.about
             .container.about__container
               .about__left
@@ -159,7 +160,7 @@ html(lang="RU_ru")
                     .form__line
 
                 +icon('message', "iconed__mail")
-                textarea.form__input-text(type="text-area" name="text" placeholder="Требуется ваша помощь в создании сайта. Интерисуют сроки и цена вопроса.").input__elem
+                textarea.form__input-text(type="text-area" name="text" placeholder="Требуется ваша помощь в создании сайта. Интерисуют сроки и цена вопроса.").input__elem-text
                 .form__line-text
 
                 .form__btn
@@ -195,9 +196,9 @@ html(lang="RU_ru")
               .fotter__links 
                       nav.nav
                         - var menu = ['Главная', "Обо мне", "Навыки", "Работы","Отзывы","Связаться"]
-                        ul.nav__list
+                        ul.nav__list-footer
                           each item in menu
-                            li.nav__item
+                            li.nav__item-footer
                               a(href="").nav__link #{item}
               .footer__nav
 

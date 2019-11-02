@@ -1,28 +1,39 @@
 .container__values {
   position: relative;
-  padding: 10% 5%;
+  padding: 5% 5%;
   display: flex;
   flex-direction: column;
+  @include tablets {
+    flex-direction: column-reverse;
+    padding: 0% 5%;
+    margin-top: -15%;
+  }
 }
 
 .bagage__pic {
   position: absolute;
   margin: 0 0 0 0;
   left: 0;
+  @include tablets {
+    position: relative;
+  }
 }
 
 .values__title {
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 10% 0 0 50%;
+  padding: 10% 0 0 40%;
+  @include tablets {
+    padding: 0% 0 0 0%;
+  }
 }
 
 .values__desc {
   margin-bottom: 5%;
-
-  & :last-child {
-    margin-bottom: 0%;
+  @include tablets {
+    text-align: center;
+    padding: 0 10%;
   }
 }
 
@@ -30,12 +41,24 @@
   margin-bottom: 5%;
   font-weight: 800;
   font-size: 36px;
+  @include tablets {
+    text-align: center;
+    padding: 0 20%;
+  }
 }
 
 .user-skills {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+.skills-row__title {
+  font-weight: 600;
+  font-size: 25px;
+  @include tablets {
+    text-align: center;
+  }
 }
 
 .user-skills__item {
@@ -96,4 +119,7 @@
   font-weight: 800;
   font-size: 25px;
   text-align: center;
+  @include desktop {
+    font-size: 16px;
+  }
 }

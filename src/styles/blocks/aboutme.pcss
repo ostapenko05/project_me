@@ -5,6 +5,9 @@
 
 .aboutme__content {
     padding-top: 10%;
+    @include tablets {
+        padding-top: 15%;
+    }
 }
 
 .budda__fon {
@@ -27,12 +30,19 @@
         @include desktopHd {
             bottom: -550px;
         }
+        @include tablets {
+            bottom: -500px;
+        }
     }
     &:nth-child(2) {
         bottom: -350px;
         right: -300px;
         @include desktopHd {
             bottom: -250px;
+        }
+        @include tablets {
+            bottom: -500px;
+            right: -400px;
         }
     }
     &:nth-child(3) {
@@ -59,7 +69,6 @@
 
 .container__aboutme {
     padding: 0 0;
-    
 }
 
 .paralax__pic-down {
