@@ -26,9 +26,9 @@ html(lang="RU_ru")
               +image('content/layer-6.png', 'layer__img')
             .parallax__layer(data-speed="0.1")
               +image('content/layer-7.png', 'layer__img')
-
+          
           section.hero
-            
+            //- +image('content/Mountain Baloon.jpg', '.pic__mountain')
             .container.hero__container
               header.header.hero__header
                 .hero__logo
@@ -159,7 +159,7 @@ html(lang="RU_ru")
                     .form__line
 
                 +icon('message', "iconed__mail")
-                input.form__input-text(type="text" name="text" placeholder="Требуется ваша помощь в создании сайта. Интерисуют сроки и цена вопроса.").input__elem
+                textarea.form__input-text(type="text-area" name="text" placeholder="Требуется ваша помощь в создании сайта. Интерисуют сроки и цена вопроса.").input__elem
                 .form__line-text
 
                 .form__btn

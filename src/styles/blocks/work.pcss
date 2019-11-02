@@ -4,21 +4,21 @@
   justify-content: center;
   padding: 3% 10%;
   position: relative;
-  height: 50vh;
+  height: 80vh;
 }
 
 .section-title {
-  padding-left: 27%;
+  padding-left: 10%;
   font-weight: 800;
   font-size: 36px;
   font-family: sans-serif;
-  @include retina {
+  /* @include retina {
     padding-left: 17%;
   }
 
   @include desktopHd {
     padding-left: 15%;
-  }
+  } */
 }
 
 .works-slider {
@@ -36,12 +36,13 @@
   position: relative;
   z-index: 10;
   height: 100%;
-  margin-left: -25%;
-  @include desktopHd {
+  padding: 0 15%;
+  margin-right: 10%;
+  /* @include desktopHd {
     margin-bottom: 105px;
     width: 70%;
     margin-left: -5%;
-  }
+  } */
 
   &:before {
     content: attr(data-slide);
