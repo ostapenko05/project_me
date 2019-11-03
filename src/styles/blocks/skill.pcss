@@ -8,6 +8,9 @@
     padding: 0% 5%;
     margin-top: -15%;
   }
+  @include phones {
+    margin-top: 125%;
+  }
 }
 
 .bagage__pic {
@@ -17,6 +20,9 @@
   @include tablets {
     position: relative;
   }
+  /* @include phones{
+    margin: 20% 0;
+  } */
 }
 
 .values__title {
@@ -35,6 +41,10 @@
     text-align: center;
     padding: 0 10%;
   }
+  @include phones {
+    text-align: start;
+    padding: 0 0 10% 0;
+  }
 }
 
 .values__title-text {
@@ -44,6 +54,11 @@
   @include tablets {
     text-align: center;
     padding: 0 20%;
+  }
+  @include phones {
+    text-align: start;
+    padding: 0 0;
+    font-size: 24px;
   }
 }
 
@@ -63,13 +78,17 @@
 
 .user-skills__item {
   width: 100%;
-  height: 200px;
+  /* height: 200px; */
   margin-bottom: 5%;
 }
 
 .skills-row__item {
   width: 200px;
   height: 200px;
+  @include phones {
+    width: 50%;
+    height: 20%;
+  }
 }
 
 .skills-row__list {
@@ -80,6 +99,11 @@
 
   &:last-child {
     margin-right: 0;
+  }
+  @include phones {
+    flex-wrap: wrap;
+    height: 100%;
+    /* padding-bottom: 25%; */
   }
 }
 

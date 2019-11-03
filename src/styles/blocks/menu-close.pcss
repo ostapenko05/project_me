@@ -7,11 +7,13 @@
   height: 100vh;
   background-color: #fff;
   padding: 50% 5%;
+  z-index: 20;
   @include tablets {
     display: none;
     padding: 40% 5%;
   }
   @include phones {
+    padding: 20% 5%;
   }
 }
 
@@ -25,6 +27,9 @@
   font-weight: 600;
   padding: 0% 0 0 8%;
   cursor: pointer;
+  @include phones {
+  font-size: 16px;
+  }
 }
 
 .nav__close-link {

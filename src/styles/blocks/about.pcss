@@ -5,16 +5,38 @@
   @include desktop {
     height: 50vh;
   }
+  @include phones {
+    height: 120vh;
+  }
 }
 
 .about__container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  @include phones {
+    flex-direction: column;
+    padding-top: 60%;
+  }
 }
 
 .about__left {
   margin: 0 10%;
+  @include phones {
+    margin: 0 0;
+  }
+}
+
+.about__prolog {
+  @include phones {
+    margin-bottom: 15%;
+  }
+}  
+
+.about__text {
+  @include phones {
+    margin-bottom: 15%;
+  }
 }
 
 .about__right {
@@ -39,13 +61,20 @@
     @include desktop {
       top: 60%;
     }
-    @include desktop {
+    @include tablets {
       top: 38%;
       left: 45%;
+    }
+    @include phones {
+      top: 103%;
+      left: -1%;
     }
   }
   @include tablets {
     width: 50%;
+  }
+  @include phones {
+    width: 100%;
   }
 }
 
@@ -55,5 +84,9 @@
   font-size: 36px;
   @include tablets {
     font-size: 24px;
+  }
+  @include phones {
+    margin-bottom: 15%;
+    font-size: 36px;
   }
 }

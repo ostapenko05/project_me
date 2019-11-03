@@ -10,12 +10,28 @@
     }
 }
 
+.pic__down {
+    position: absolute;
+    bottom: 100px;
+    z-index: -200;
+    height: 100%;
+    width: 100%;
+    padding-top: 0.1%;
+    display: none;
+    @include phones {
+        display: block;
+    }
+}
+
 .budda__fon {
     position: absolute;
     z-index: -200;
     height: 100%;
     width: 100%;
     padding-top: 0.1%;
+    @include phones {
+        display: none;
+    }
 }
 
 .parallax__about {
@@ -56,6 +72,9 @@
         @include desktopHd {
             bottom: -250px;
         }
+    }
+    @include phones {
+        display: none;
     }
 }
 

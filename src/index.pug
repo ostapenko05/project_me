@@ -65,10 +65,10 @@ html(lang="RU_ru")
                             a(href="").nav__close-link #{item}
                   .hero__menu
                     - var icons = ['insta', 'vk', 'github']
-                    ul.socials
+                    ul.socials__close
                       each item, index in icons
-                        li.socials__item(class=`${index === 1 ? 'active' : ''}`)
-                          a(href="").socials__link
+                        li.socials__item-close(class=`${index === 1 ? 'active' : ''}`)
+                          a(href="").socials__link-close
                             +icon(`${item}`, 'socials__icon')
                               
               .hero__content
@@ -144,6 +144,7 @@ html(lang="RU_ru")
                 
 
             .form
+
               .form__title Связаться со мной
               form(action="" method="POST")
                 .form__inputs
@@ -158,7 +159,7 @@ html(lang="RU_ru")
                     +icon('envelope', "iconed__mail")
                     input.input__back(type="text" name="mail" placeholder="LoftSchool@study.com").input__elem
                     .form__line
-
+                p.form__text Сообщение к письму
                 +icon('message', "iconed__mail")
                 textarea.form__input-text(type="text-area" name="text" placeholder="Требуется ваша помощь в создании сайта. Интерисуют сроки и цена вопроса.").input__elem-text
                 .form__line-text
@@ -176,6 +177,8 @@ html(lang="RU_ru")
                 +image('content/Budda-layer-5.png', 'layer__budda')
               .parallax__budda(data-speed="0.1")
                 +image('content/Budda-layer-6.png', 'layer__budda')
+            +image('content/down-phones.png', 'pic__down')
+              
 
           footer.footer__container
             .footer__left
@@ -184,8 +187,8 @@ html(lang="RU_ru")
                 p &#169 2019
               .footer__title
                 .footer-info__title-name
-                  h1.footer-info__username аркадий 
-                  h1.footer-info__username остапенко
+                  h1.footer-info__username Аркадий
+                  h1.footer-info__username Остапенко
 
                 .footer-info__title
                   h3.footer-info__desc Личный сайт 
@@ -207,10 +210,10 @@ html(lang="RU_ru")
                   .fotter__menu
                     
                     -var icons = ['insta', 'vk', 'github']
-                    ul.socials
+                    ul.socials__close
                       each item, index in icons
-                        li.socials__item.social__item-footer(class=`${index === 1 ? 'active' : ''}`)
-                          a(href="").socials__link
+                        li.socials__item-close.social__item-footer(class=`${index === 1 ? 'active' : ''}`)
+                          a(href="").socials__link-close
                             +icon(`${item}`, 'socials__icon')
 
                 .footer__nav-right
