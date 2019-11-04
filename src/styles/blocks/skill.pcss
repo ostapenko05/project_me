@@ -5,7 +5,7 @@
   flex-direction: column;
   @include tablets {
     flex-direction: column-reverse;
-    padding: 0% 5%;
+    padding: 20% 5%;
     margin-top: -15%;
   }
   @include phones {
@@ -17,12 +17,13 @@
   position: absolute;
   margin: 0 0 0 0;
   left: 0;
+  @include desktop {
+    margin: 0 0 0 -10%;
+  }
   @include tablets {
     position: relative;
+    margin: -20% 0
   }
-  /* @include phones{
-    margin: 20% 0;
-  } */
 }
 
 .values__title {

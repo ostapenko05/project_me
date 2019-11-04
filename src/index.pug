@@ -12,8 +12,10 @@ html(lang="RU_ru")
       .maincontent
           +image('content/up-phones.png', 'pic__up-phones')
           +image('content/up-tablets.png', 'pic__up-tablets')
+          
           .parallax
-            .parallax__layer(data-speed="0.8")
+            +image('content/layer-1.png', 'pic__up-desktop')
+            .parallax__layer(data-speed="0")
               +image('content/layer-1.png', 'layer__img')
             .parallax__layer(data-speed="0.5")
               +image('content/layer-2.png', 'layer__img')
@@ -25,7 +27,7 @@ html(lang="RU_ru")
               +image('content/layer-5.png', 'layer__img')
             .parallax__layer(data-speed="0.2")
               +image('content/layer-6.png', 'layer__img')
-            .parallax__layer(data-speed="0.1")
+            .parallax__layer(data-speed="0")
               +image('content/layer-7.png', 'layer__img')
           
           section.hero

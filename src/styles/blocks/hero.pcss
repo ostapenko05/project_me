@@ -22,7 +22,6 @@
   display: none;
   position: absolute;
   width: 100%;
-
   @include phones {
     display: block;
   }
@@ -32,6 +31,21 @@
   overflow: hidden;
   @include phones {
     overflow: auto;
+  }
+}
+
+.pic__up-desktop {
+  display: none;
+  @include desktop {
+    display: block;
+    position: absolute;
+    width: 100%;
+    z-index: -200;
+    height: 40%;
+    opacity: .2;
+  }
+  @include phones {
+    display: none;
   }
 }
 
@@ -47,10 +61,7 @@
   object-fit: cover;
   will-change: transform;
   width: 100%;
-  max-height: 180vh;
-  @include tablets {
-    max-height: 250vh;
-  }
+  /* max-height: 180vh; */
 }
 
 .logo {
