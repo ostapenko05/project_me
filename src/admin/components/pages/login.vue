@@ -1,25 +1,25 @@
 <template lang="pug">
-  .login
-    .login__content
-      form.login__form(@submit.prevent="login")
-        .login__form-title Авторизация
-        .login__row
-          app-input(
-            title="Логин"
-            icon="user"
-            v-model="user.name"
-          )
-        .login__row
-          app-input(
-            title="Пароль"
-            icon="key"
-            type="password"
-            v-model="user.password"
-          )
-        .login__btn
-          button(
-            type="submit"
-          ).login__send-data Отправить
+  //- .login
+  //-   .login__content
+  //-     form.login__form(@submit.prevent="login")
+  //-       .login__form-title Авторизация
+  //-       .login__row
+  //-         app-input(
+  //-           title="Логин"
+  //-           icon="user"
+  //-           v-model="user.name"
+  //-         )
+  //-       .login__row
+  //-         app-input(
+  //-           title="Пароль"
+  //-           icon="key"
+  //-           type="password"
+  //-           v-model="user.password"
+  //-         )
+  //-       .login__btn
+  //-         button(
+  //-           type="submit"
+  //-         ).login__send-data Отправить
 </template>
 
 <script>
@@ -54,7 +54,7 @@
 </script>
 
 <style lang="postcss">
-@import "../../../styles/mixins.pcss";
+/* @import "../../../styles/mixins.pcss";
 .login {
   position: fixed;
   top: 0;
@@ -124,5 +124,5 @@
     flex-direction: column;
     justify-content: center;
   }
-}
+} */
 </style>

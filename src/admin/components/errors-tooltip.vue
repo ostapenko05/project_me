@@ -1,21 +1,21 @@
 <template lang="pug">
-  .input__error-tooltip-container {{errorText}}
+  //- .input__error-tooltip-container {{errorText}}
 </template>
 
 <script>
-export default {
-  props: {
-    errorText: {
-      type: String,
-      default: "Ошибка"
-    }
-  }
-};
+// export default {
+//   props: {
+//     errorText: {
+//       type: String,
+//       default: "Ошибка"
+//     }
+//   }
+// };
 </script>
 
 
 <style lang="postcss" scoped>
-.input__error-tooltip-container {
+/* .input__error-tooltip-container {
   z-index: 100;
   background: $errors-color;
   color: #fff;
@@ -36,5 +36,5 @@ export default {
     left: 50%;
     transform: translateX(-50%);
   }
-}
+} */
 </style>

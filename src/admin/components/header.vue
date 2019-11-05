@@ -1,30 +1,30 @@
 <template lang="pug">
-  .header
-    .container
-      .header__info
-        .user
-          .user__pic
-            img(src="../../images/content/user.jpg").user__pic-avatar
-          .user__name 
-            span Владимир Астаханов
-            a.exit-btn(@click="logout") Выйти
+  //- .header
+  //-   .container
+  //-     .header__info
+  //-       .user
+  //-         .user__pic
+  //-           img(src="../../images/content/arkadiy.png").user__pic-avatar
+  //-         .user__name 
+  //-           span Владимир Астаханов
+  //-           a.exit-btn(@click="logout") Выйти
             
-        .header__title Панель администрирования
-      a.exit-btn(@click="logout") Выйти
+  //-       .header__title Панель администрирования
+  //-     a.exit-btn(@click="logout") Выйти
 </template>
 
 <script>
-import { mapActions } from "vuex";
-export default {
-  methods: {
-    ...mapActions("user", ["logout"])
-  }
-};
+// import { mapActions } from "vuex";
+// export default {
+//   methods: {
+//     ...mapActions("user", ["logout"])
+//   }
+// };
 </script>
 
 
 <style lang="postcss" scoped>
-@import url("../../styles/mixins.pcss");
+/* @import url("../../styles/mixins.pcss");
 .header {
   color: #fff;
 }
@@ -76,5 +76,5 @@ export default {
   @include phones {
     display: none;
   }
-}
+} */
 </style>

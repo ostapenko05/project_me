@@ -1,27 +1,27 @@
 <template lang="pug">
-  .about-page-container
-    .container
-      .about-page__title
-        h1.page-title Обо мне
-        button.about-page__add-new(
-          @click="showAddingForm = true"
-          v-if="showAddingForm === false"
-        ) Добавить группу
+  //- .about-page-container
+  //-   .container
+  //-     .about-page__title
+  //-       h1.page-title Обо мне
+  //-       button.about-page__add-new(
+  //-         @click="showAddingForm = true"
+  //-         v-if="showAddingForm === false"
+  //-       ) Добавить группу
 
-    .about-page__content
-      .container.container--mobile-wide
-        ul.skill-list
-          li.skill-list__item(v-if="showAddingForm")
-            skills-add(
-            )
-          li.skill-list__item(
-            v-for="category in categories"
-            :key="category.id"
-          )
-            skills-group(
-              :category="category"
-              :skills="filterSkillsByCategoryId(category.id)"
-            )
+  //-   .about-page__content
+  //-     .container.container--mobile-wide
+  //-       ul.skill-list
+  //-         li.skill-list__item(v-if="showAddingForm")
+  //-           skills-add(
+  //-           )
+  //-         li.skill-list__item(
+  //-           v-for="category in categories"
+  //-           :key="category.id"
+  //-         )
+  //-           skills-group(
+  //-             :category="category"
+  //-             :skills="filterSkillsByCategoryId(category.id)"
+  //-           )
 </template>
 
 <script>
@@ -67,7 +67,7 @@
 </script>
 
 <style lang="postcss" scoped>
-@import "../../../styles/mixins.pcss";
+/* @import "../../../styles/mixins.pcss";
 .skill-container {
   border: 1px solid black;
   padding: 10px;
@@ -131,5 +131,5 @@
     margin-left: 0;
     margin-bottom: 12px;
   }
-}
+} */
 </style>

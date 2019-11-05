@@ -1,54 +1,54 @@
 <template lang="pug">
-  .reviews-section
-    .container
-      h1.page-title Блок "Отзывы"
+  //- .reviews-section
+  //-   .container
+  //-     h1.page-title Блок "Отзывы"
 
-    .reviews-container
-      .container.card
-        .card__title
-          .card__title-text Текст
-        .card__content
-          .reviews__form   
-            .reviews__form-content
-              .reviews__form-userpic
-                label.reviews__form-avatar-upload
-                  input(
-                    type="file"
-                    @change="appendFileAndRenderPhoto"
-                  ).reviews__form-file-input
-                  .reviews__form-pic
-                    .reviews__form-avatar-empty(
-                      :class="{'filled' : this.rendedPhotoUrl.length}"
-                      :style="{'backgroundImage' : `url(${this.rendedPhotoUrl})`}"
-                    )
-                  .reviews__form-addphoto Добавить фото
-              .reviews__form-col
-                .reviews__form-row
-                  .reviews__form-block
-                    app-input(
-                      title="Имя автора"
-                    )
-                  .reviews__form-block
-                    app-input(
-                      title="Титул автора"
-                    )
-                .reviews__form-row
-                  .reviews__form-block
-                    app-input(
-                      title="Отзыв"
-                      field-type="textarea"
-                    )
+  //-   .reviews-container
+  //-     .container.card
+  //-       .card__title
+  //-         .card__title-text Текст
+  //-       .card__content
+  //-         .reviews__form   
+  //-           .reviews__form-content
+  //-             .reviews__form-userpic
+  //-               label.reviews__form-avatar-upload
+  //-                 input(
+  //-                   type="file"
+  //-                   @change="appendFileAndRenderPhoto"
+  //-                 ).reviews__form-file-input
+  //-                 .reviews__form-pic
+  //-                   .reviews__form-avatar-empty(
+  //-                     :class="{'filled' : this.rendedPhotoUrl.length}"
+  //-                     :style="{'backgroundImage' : `url(${this.rendedPhotoUrl})`}"
+  //-                   )
+  //-                 .reviews__form-addphoto Добавить фото
+  //-             .reviews__form-col
+  //-               .reviews__form-row
+  //-                 .reviews__form-block
+  //-                   app-input(
+  //-                     title="Имя автора"
+  //-                   )
+  //-                 .reviews__form-block
+  //-                   app-input(
+  //-                     title="Титул автора"
+  //-                   )
+  //-               .reviews__form-row
+  //-                 .reviews__form-block
+  //-                   app-input(
+  //-                     title="Отзыв"
+  //-                     field-type="textarea"
+  //-                   )
       
-          .edit-form__buttons
-            .edit-form__buttons-item
-              app-button(
-                text="Отмена"
-                class="plain"
-              )
-            .edit-form__buttons-item
-              app-button(
-                text="Загрузить"
-              )
+  //-         .edit-form__buttons
+  //-           .edit-form__buttons-item
+  //-             app-button(
+  //-               text="Отмена"
+  //-               class="plain"
+  //-             )
+  //-           .edit-form__buttons-item
+  //-             app-button(
+  //-               text="Загрузить"
+  //-             )
 </template>
 
 // <script>
