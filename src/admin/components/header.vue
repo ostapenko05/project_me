@@ -1,30 +1,21 @@
 <template lang="pug">
-  //- .header
-  //-   .container
-  //-     .header__info
-  //-       .user
-  //-         .user__pic
-  //-           img(src="../../images/content/arkadiy.png").user__pic-avatar
-  //-         .user__name 
-  //-           span Владимир Астаханов
-  //-           a.exit-btn(@click="logout") Выйти
-            
-  //-       .header__title Панель администрирования
-  //-     a.exit-btn(@click="logout") Выйти
+  
+  .header-container
+    .header
+      .container
+        .header__info
+          .user
+            .user__pic
+            .user__name 
+              span Аркадий Остапенко
+                a.exit-btn Выйти
+          .header__title Панель администрирования
+        a.exit-btn Выйти
+  
 </template>
 
-<script>
-// import { mapActions } from "vuex";
-// export default {
-//   methods: {
-//     ...mapActions("user", ["logout"])
-//   }
-// };
-</script>
-
-
 <style lang="postcss" scoped>
-/* @import url("../../styles/mixins.pcss");
+@import url("../../styles/mixins.pcss");
 .header {
   color: #fff;
 }
@@ -59,6 +50,7 @@
   }
 }
 .user__pic {
+   background: url("~images/content/arkadiy.png") center center no-repeat / cover;
   margin-right: 20px;
   width: 45px;
   height: 45px;
@@ -76,5 +68,5 @@
   @include phones {
     display: none;
   }
-} */
+}
 </style>

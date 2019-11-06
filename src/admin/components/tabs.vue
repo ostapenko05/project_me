@@ -1,4 +1,12 @@
 <template lang="pug">
+  section.tabs-container
+    .tabs-container
+      .container
+        ul.tabs
+          - var tabs = ["Обо мне", "Работы", "Отзывы"]
+            each item in tabs
+              li.tabs__item
+                a(href="").tabs__link #{item}
   //- .tabs-container
   //-   .container
   //-     ul.tabs
@@ -27,13 +35,14 @@
 
 
 <style lang="postcss" scoped>
-/* @import "../../styles/mixins.pcss";
+@import "../../styles/mixins.pcss";
 .tabs-container {
   background: #fff;
 }
 .tabs {
   display: flex;
   height: 77px;
+  /* background: #383bcf; */
   @include phones {
     height: 87px;
   }
@@ -41,6 +50,7 @@
 .tabs__item {
   height: 100%;
   margin-right: 30px;
+  color: black;
   @include phones {
     margin-right: 3px;
   }
@@ -71,5 +81,5 @@
     font-weight: 600;
     border-color: currentColor;
   }
-} */
+}
 </style>

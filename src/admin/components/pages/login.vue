@@ -1,25 +1,24 @@
 <template lang="pug">
-  //- .login
-  //-   .login__content
-  //-     form.login__form(@submit.prevent="login")
-  //-       .login__form-title Авторизация
-  //-       .login__row
-  //-         app-input(
-  //-           title="Логин"
-  //-           icon="user"
-  //-           v-model="user.name"
-  //-         )
-  //-       .login__row
-  //-         app-input(
-  //-           title="Пароль"
-  //-           icon="key"
-  //-           type="password"
-  //-           v-model="user.password"
-  //-         )
-  //-       .login__btn
-  //-         button(
-  //-           type="submit"
-  //-         ).login__send-data Отправить
+  
+  .login
+    .login__content
+      form.login__form
+        .login__form-title Авторизация
+        .login__row
+          input(
+            title="Логин"
+            icon="user"
+          )
+        .login__row
+          input(
+            title="Пароль"
+            icon="key"
+            type="password"
+          )
+        .login__btn
+          button(
+            type="submit"
+          ).login__send-data Отправить
 </template>
 
 <script>
@@ -54,7 +53,7 @@
 </script>
 
 <style lang="postcss">
-/* @import "../../../styles/mixins.pcss";
+@import "../../../styles/mixins.pcss";
 .login {
   position: fixed;
   top: 0;
@@ -62,9 +61,11 @@
   right: 0;
   bottom: 0;
   display: flex;
-  align-items: center;
+  display: none;
+  /* align-items: center; */
   justify-content: center;
-  background: url("~images/bg/admin.jpg") center center / cover no-repeat;
+  background: url("~images/content/up-tablets.png") center center / cover
+    no-repeat;
   &:before {
     content: "";
     position: absolute;
@@ -76,11 +77,13 @@
     background: $text-color;
   }
 }
+
 .login__form-title {
   font-size: 36px;
   text-align: center;
   font-weight: 600;
 }
+
 .login__content {
   position: relative;
   @include phones {
@@ -88,15 +91,19 @@
     width: 100%;
   }
 }
+
 .login__row {
   margin-bottom: 35px;
+  text-align: center;
 }
+
 .login__btn {
   display: flex;
   width: 100%;
   padding: 0 8%;
   justify-content: center;
 }
+
 .login__send-data {
   width: 100%;
   padding: 30px;
@@ -111,6 +118,7 @@
     filter: grayscale(100%);
   }
 }
+
 .login__form {
   width: 563px;
   padding: 50px 77px 60px;
@@ -124,5 +132,5 @@
     flex-direction: column;
     justify-content: center;
   }
-} */
+}
 </style>

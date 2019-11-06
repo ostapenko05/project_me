@@ -1,4 +1,26 @@
 <template lang="pug">
+  
+  .about-page-container
+    .container
+      .about-page__title
+        h1.page-title Блок "Обо мне"
+        button.about-page__add-new Добавить группу
+    .about-page__content
+      .container.container--mobile-wide
+        ul.skill-list
+          li.skill-list__item
+            .skill__name Название новой группы
+            hr
+            hr.line
+          li.skill-list__item
+            .skill__name Workflow
+            hr
+            hr.line
+          li.skill-list__item
+            .skill__name FrontEnd
+            hr
+            hr.line
+             
   //- .about-page-container
   //-   .container
   //-     .about-page__title
@@ -67,7 +89,7 @@
 </script>
 
 <style lang="postcss" scoped>
-/* @import "../../../styles/mixins.pcss";
+@import "../../../styles/mixins.pcss";
 .skill-container {
   border: 1px solid black;
   padding: 10px;
@@ -89,6 +111,7 @@
   }
 }
 .about-page__add-new {
+  background: transparent;
   color: $links-color;
   font-weight: bold;
   display: flex;
@@ -121,6 +144,8 @@
   width: calc(100% / 2 - 30px);
   margin-left: 30px;
   margin-bottom: 30px;
+  background: #fff;
+  box-shadow: grey .5 .5 .5 .5;
   &.loading {
     opacity: 0.5;
     pointer-events: none;
@@ -131,5 +156,22 @@
     margin-left: 0;
     margin-bottom: 12px;
   }
-} */
+}
+
+.skill__name {
+  margin-left: 30px;
+  &:nth-child(0) {
+    opacity: .5;
+  }
+}
+
+hr {
+  width: 60%;
+  margin-left: 30px;
+  text-align: left;
+}
+
+hr1 {
+
+}
 </style>
