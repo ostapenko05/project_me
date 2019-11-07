@@ -1,5 +1,4 @@
 <template lang="pug">
-  
   .about-page-container
     .container
       .about-page__title
@@ -9,17 +8,59 @@
       .container.container--mobile-wide
         ul.skill-list
           li.skill-list__item
-            .skill__name Название новой группы
-            hr
-            hr.line
+            .skill__name 
+              .skill__title.skill__title-new Название новой группы
+              .skill__title-control
+                .control__check
+                  div.radio
+                    label.checkbox
+                      input(type="checkbox").checkbox__input(checked)
+                      span.checkbox__mark
+                .control__x
+                  a(href="#").menu__hover-button
+                    span.menu__hover-line.menu__hover-line_active
+            hr.line-1
+            hr.line-2
+            button.about-page__butn
+
+            hr.line-
           li.skill-list__item
-            .skill__name Workflow
-            hr
-            hr.line
+            .skill__name 
+              .skill__title Workflow
+              .skill__title-control
+                .control__check
+                  div.radio
+                    label.checkbox
+                      input(type="checkbox").checkbox__input(checked)
+                      span.checkbox__mark
+                .control__x
+                  a(href="#").menu__hover-button
+                    span.menu__hover-line.menu__hover-line_active
+            hr.line-1
+            hr.line-2
+            button.about-page__butn
           li.skill-list__item
-            .skill__name FrontEnd
-            hr
-            hr.line
+            .skill__name 
+              .skill__title FrontEnd
+              .skill__title-control
+                .control__check
+                  div.radio
+                    label.checkbox
+                      input(type="checkbox").checkbox__input(checked)
+                      span.checkbox__mark
+                .control__x
+                  a(href="#").menu__hover-button
+                    span.menu__hover-line.menu__hover-line_active
+            hr.line-1
+            hr.line-2
+            .skill__content
+              ul.skill__content-list
+                li
+
+            button.about-page__butn
+            
+            
+            
              
   //- .about-page-container
   //-   .container
@@ -97,7 +138,7 @@
 .about-page__title {
   display: flex;
   align-items: center;
-  margin-bottom: 60px;
+  margin: 30px 0;
   .page-title {
     margin-bottom: 0;
     margin-right: 60px;
@@ -132,6 +173,30 @@
     flex-basis: 20px;
   }
 }
+
+.about-page__butn {
+  background: transparent;
+  color: $links-color;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  border: none;
+  &:before {
+    content: "+";
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-image: linear-gradient(to right, #006aed, #3f35cb);
+    line-height: 20px;
+    color: #fff;
+    margin-right: 13px;
+    flex-shrink: 0;
+    flex-basis: 20px;
+  }
+}
+
 .skill-list {
   display: flex;
   flex-wrap: wrap;
@@ -145,7 +210,7 @@
   margin-left: 30px;
   margin-bottom: 30px;
   background: #fff;
-  box-shadow: grey .5 .5 .5 .5;
+  box-shadow: grey 0.5 0.5 0.5 0.5;
   &.loading {
     opacity: 0.5;
     pointer-events: none;
@@ -160,18 +225,117 @@
 
 .skill__name {
   margin-left: 30px;
+  height: 40px;
   &:nth-child(0) {
-    opacity: .5;
+    opacity: 0.5;
   }
 }
 
-hr {
+.line-1 {
   width: 60%;
   margin-left: 30px;
   text-align: left;
 }
 
-hr1 {
+.skill__name {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.skill__title-new {
+  opacity: 0.4;
+}
 
+.skill__title-control {
+  display: flex;
+  align-items: center;
+  width: 60px;
+  height: 40px;
+}
+
+.line-2 {
+  width: 90%;
+  margin-left: 30px;
+  text-align: left;
+  opacity: 0.3;
+
+}
+
+.checkbox__input {
+  position: absolute;
+  visibility: hidden;
+ 
+}
+
+.checkbox__mark {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  vertical-align: center;
+  /* margin-right: 0.2rem; */
+  border-radius: 0.1rem;
+  cursor: pointer;
+
+}
+
+.checkbox__input:checked + .checkbox__mark {
+  &::after {
+    content: "";
+    position: absolute;
+    left: 30%;
+    top: -20%;
+    width: 0.25rem;
+    height: 0.4rem;
+    transform: rotate(45deg);
+    border: 0.1rem solid green;
+    border-top-color: transparent;
+    border-left-color: transparent;
+  }
+}
+
+.control__x {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.menu__hover-line,
+.menu__hover-line::after,
+.menu__hover-line::before {
+  position: absolute;
+  height: 2px;
+  width: 10px;
+  background:crimson;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.menu__hover-line {
+  top: 70%;
+  right: 40%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.menu__hover-line::after {
+  content: "";
+  top: -0.75rem;
+}
+
+.menu__hover-line::before {
+  content: "";
+  top: 0.75rem;
+}
+
+.menu__hover-line::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.menu__hover-line::after {
+  top: 0;
+  transform: rotate(-45deg);
 }
 </style>

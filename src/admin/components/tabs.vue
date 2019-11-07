@@ -3,10 +3,12 @@
     .tabs-container
       .container
         ul.tabs
-          - var tabs = ["Обо мне", "Работы", "Отзывы"]
-            each item in tabs
-              li.tabs__item
-                a(href="").tabs__link #{item}
+          li.tabs__item
+            router-link(to="/" tag="button").tabs__link Обо мне
+          li.tabs__item
+            router-link(to="/works" tag="button").tabs__link Работы
+          li.tabs__item
+            router-link(to="/reviews" tag="button").tabs__link Отзывы
   //- .tabs-container
   //-   .container
   //-     ul.tabs

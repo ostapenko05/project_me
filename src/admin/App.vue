@@ -2,9 +2,16 @@
   div.root-wrapper-container
     div.root-container
       headeradmin
+      router-view
       tabsadmin
       aboutadmin
+
       .content-container
+        .works__admin
+        worksadmin
+        .reviews__admin
+        reviewsadmin
+
     div.login__admin
       loginadmin
         //-   .works-section
@@ -36,6 +43,8 @@ import headeradmin from './components/header';
 import tabsadmin from './components/tabs';
 import aboutadmin from './components/pages/about';
 import loginadmin from './components/pages/login';
+import worksadmin from './components/pages/works';
+import reviewsadmin from './components/pages/reviews';
 
 export default {
   name: "app",
@@ -43,7 +52,9 @@ export default {
     headeradmin,
     tabsadmin,
     aboutadmin,
-    loginadmin
+    loginadmin,
+    worksadmin,
+    reviewsadmin
   },
   data () {
     return {
@@ -96,7 +107,7 @@ button {
   height: 100vh;
   z-index: -20;
   background: url("~images/content/up-tablets.png") center center no-repeat / cover;
-  /* opacity: .3; */
+  opacity: .3;
   @include phones {
     padding-top: 30px;
   }

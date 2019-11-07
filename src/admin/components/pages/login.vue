@@ -45,7 +45,7 @@
 //         $axios.defaults.headers["Authorization"] = `Bearer ${token}`;
 //         this.$router.replace("/");
 //       } catch (error) {
-//         //error handling
+//         error 
 //       }
 //     }
 //   }
@@ -60,9 +60,9 @@
   left: 0;
   right: 0;
   bottom: 0;
-  display: flex;
+  /* display: flex; */
   display: none;
-  /* align-items: center; */
+  align-items: center;
   justify-content: center;
   background: url("~images/content/up-tablets.png") center center / cover
     no-repeat;

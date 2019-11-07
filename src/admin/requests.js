@@ -2,7 +2,7 @@
 
 // const token = localStorage.getItem("token");
 
-// axios.defaults.baseURL = "http://localhost:8080";
+// axios.defaults.baseURL = "http://localhost:8080/admin";
 // axios.defaults.headers["Authorization"] = `Bearer ${token}`;
 
 // axios.interceptors.response.use(
