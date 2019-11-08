@@ -3,130 +3,37 @@
     .container
       .about-page__title
         h1.page-title Блок "Обо мне"
-        button.about-page__add-new Добавить группу
+        button.about-page__add-new() Добавить группу
+      form(@submit.prevent="addNewCategory")
+       input(type="text" v-model="title" placeholder="Имя категории")
+       input(type="submit" placeholder="Добавить")
     .about-page__content
       .container.container--mobile-wide
-        ul.skill-list
-          li.skill-list__item
-            .skill__name 
-              .skill__title.skill__title-new Название новой группы
-              .skill__title-control
-                .control__check
-                  div.radio
-                    label.checkbox
-                      input(type="checkbox").checkbox__input(checked)
-                      span.checkbox__mark
-                .control__x
-                  a(href="#").menu__hover-button
-                    span.menu__hover-line.menu__hover-line_active
-            hr.line-1
-            hr.line-2
-            button.about-page__butn
-
-            hr.line-
-          li.skill-list__item
-            .skill__name 
-              .skill__title Workflow
-              .skill__title-control
-                .control__check
-                  div.radio
-                    label.checkbox
-                      input(type="checkbox").checkbox__input(checked)
-                      span.checkbox__mark
-                .control__x
-                  a(href="#").menu__hover-button
-                    span.menu__hover-line.menu__hover-line_active
-            hr.line-1
-            hr.line-2
-            button.about-page__butn
-          li.skill-list__item
-            .skill__name 
-              .skill__title FrontEnd
-              .skill__title-control
-                .control__check
-                  div.radio
-                    label.checkbox
-                      input(type="checkbox").checkbox__input(checked)
-                      span.checkbox__mark
-                .control__x
-                  a(href="#").menu__hover-button
-                    span.menu__hover-line.menu__hover-line_active
-            hr.line-1
-            hr.line-2
-            .skill__content
-              ul.skill__content-list
-                li
-
-            button.about-page__butn
-            
-            
-            
-             
-  //- .about-page-container
-  //-   .container
-  //-     .about-page__title
-  //-       h1.page-title Обо мне
-  //-       button.about-page__add-new(
-  //-         @click="showAddingForm = true"
-  //-         v-if="showAddingForm === false"
-  //-       ) Добавить группу
-
-  //-   .about-page__content
-  //-     .container.container--mobile-wide
-  //-       ul.skill-list
-  //-         li.skill-list__item(v-if="showAddingForm")
-  //-           skills-add(
-  //-           )
-  //-         li.skill-list__item(
-  //-           v-for="category in categories"
-  //-           :key="category.id"
-  //-         )
-  //-           skills-group(
-  //-             :category="category"
-  //-             :skills="filterSkillsByCategoryId(category.id)"
-  //-           )
+        ul.slill-list
+          li.skill-list__item()
+ 
 </template>
 
 <script>
-// import { mapActions, mapState } from "vuex";
-// export default {
-//   components: {
-//     skillsAdd: () => import('components/skills-add.vue'),
-//     skillsGroup: () => import('components/skills-group.vue')
-//   },
-//   data() {
-//     return {
-//       showAddingForm: false
-//     }
-//   },
-//   computed: {
-//     ...mapState('categories', {
-//       categories: state => state.categories
-//     }),
-//     ...mapState('skills', {
-//       skills: state => state.skills
-//     })
-//   },
-//   methods: {
-//     ...mapActions('categories', ['fetchCategories']),
-//     ...mapActions('skills', ['fetchSkills']),
-//     filterSkillsByCategoryId(categoryId) {
-//       return this.skills.filter(skill => skill.category === categoryId);
-//     }
-//   },
-//   async created() {
-//     try {
-//       await this.fetchCategories();
-//     } catch (error) {
-//       alert('Произошла ошибка при загрузке категорий')
-//     }
-//     try {
-//       await this.fetchSkills();
-//     } catch (error) {
-//       alert('Произошла ошибка при загрузке скиллов')
-//     }
-//   }
-// };
+
+import { mapActions } from "vuex";
+
+export default {
+  data: () => ({
+    title: ""
+  }),
+  methods: {
+    ...mapActions("categories", ["addCategory"]),
+    async addNewCategory() {
+      try {
+        await this.addCategory(this.title)
+      } catch (error) {
+        alert(error.message);
+        ///alert заменить на модалку
+      }
+    },
+  },
+};
 </script>
 
 <style lang="postcss" scoped>
@@ -339,3 +246,81 @@
   transform: rotate(-45deg);
 }
 </style>
+       //- ul.skill-list
+        //-   li.skill-list__item
+        //-     .skill__name 
+        //-       .skill__title.skill__title-new Название новой группы
+        //-       .skill__title-control
+        //-         .control__check
+        //-           div.radio
+        //-             label.checkbox
+        //-               input(type="checkbox").checkbox__input(checked)
+        //-               span.checkbox__mark
+        //-         .control__x
+        //-           a(href="#").menu__hover-button
+        //-             span.menu__hover-line.menu__hover-line_active
+        //-     hr.line-1
+        //-     hr.line-2
+        //-     button.about-page__butn
+
+        //-   li.skill-list__item
+        //-     .skill__name 
+        //-       .skill__title Workflow
+        //-       .skill__title-control
+        //-         .control__check
+        //-           div.radio
+        //-             label.checkbox
+        //-               input(type="checkbox").checkbox__input(checked)
+        //-               span.checkbox__mark
+        //-         .control__x
+        //-           a(href="#").menu__hover-button
+        //-             span.menu__hover-line.menu__hover-line_active
+        //-     hr.line-1
+        //-     hr.line-2
+        //-     button.about-page__butn
+        //-   li.skill-list__item
+        //-     .skill__name 
+        //-       .skill__title FrontEnd
+        //-       .skill__title-control
+        //-         .control__check
+        //-           div.radio
+        //-             label.checkbox
+        //-               input(type="checkbox").checkbox__input(checked)
+        //-               span.checkbox__mark
+        //-         .control__x
+        //-           a(href="#").menu__hover-button
+        //-             span.menu__hover-line.menu__hover-line_active
+        //-     hr.line-1
+        //-     hr.line-2
+        //-     .skill__content
+        //-       ul.skill__content-list
+        //-         li
+
+        //-     button.about-page__butn
+            
+            
+            
+             
+  //- .about-page-container
+  //-   .container
+  //-     .about-page__title
+  //-       h1.page-title Обо мне
+  //-       button.about-page__add-new(
+  //-         @click="showAddingForm = true"
+  //-         v-if="showAddingForm === false"
+  //-       ) Добавить группу
+
+  //-   .about-page__content
+  //-     .container.container--mobile-wide
+  //-       ul.skill-list
+  //-         li.skill-list__item(v-if="showAddingForm")
+  //-           skills-add(
+  //-           )
+  //-         li.skill-list__item(
+  //-           v-for="category in categories"
+  //-           :key="category.id"
+  //-         )
+  //-           skills-group(
+  //-             :category="category"
+  //-             :skills="filterSkillsByCategoryId(category.id)"
+  //-           )

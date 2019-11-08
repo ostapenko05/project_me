@@ -9,16 +9,6 @@
             router-link(to="/works" tag="button").tabs__link Работы
           li.tabs__item
             router-link(to="/reviews" tag="button").tabs__link Отзывы
-  //- .tabs-container
-  //-   .container
-  //-     ul.tabs
-  //-       li.tabs__item(v-for="tab in tabs")
-  //-         router-link(
-  //-           :data-text="tab.title" 
-  //-           :to="tab.href"
-  //-           exact-active-class="active"
-  //-         ).tabs__link
-
 </template>
 
 <script>
@@ -44,7 +34,7 @@
 .tabs {
   display: flex;
   height: 77px;
-  /* background: #383bcf; */
+  margin-bottom: 20px;
   @include phones {
     height: 87px;
   }
@@ -52,7 +42,8 @@
 .tabs__item {
   height: 100%;
   margin-right: 30px;
-  color: black;
+  background: transparent;
+  /* color: black; */
   @include phones {
     margin-right: 3px;
   }
@@ -69,8 +60,10 @@
   cursor: pointer;
   width: 125px;
   justify-content: center;
+  border: 0 0 0 0 transparent;
   border-bottom: 3px solid transparent;
   text-decoration: none;
+  background: transparent;
   @include phones {
     width: 100px;
   }
@@ -81,6 +74,7 @@
   &.active {
     color: #383bcf;
     font-weight: 600;
+    border: 0 0 3px 0;
     border-color: currentColor;
   }
 }

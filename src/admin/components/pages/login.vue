@@ -2,26 +2,59 @@
   
   .login
     .login__content
-      form.login__form
+      form(
+        @submit.prevent="login"
+      ).login__form
         .login__form-title Авторизация
+        .login__title Логин
         .login__row
-          input(
+          .login__user-icon
+          input.login__input(
             title="Логин"
             icon="user"
+            v-model="user.name"
           )
+        hr.line__input
+        .login__title Пароль
         .login__row
-          input(
+          .login__pass-icon
+          input.login__input(
             title="Пароль"
             icon="key"
             type="password"
+            v-model="user.password"
           )
+        hr.line__input
         .login__btn
           button(
             type="submit"
           ).login__send-data Отправить
+      button.login__btn-x
 </template>
 
 <script>
+import $axios from '../../requests';
+export default {
+  components: {
+    appInput: () => import("../input.vue")
+  },
+  data:() => ({
+    user: {
+      name: "",
+      password: "",
+    }
+  }),
+  methods: {
+    async login() {
+      try {
+        const reponse = await $axios.post('./login.vue', this.user);
+        console.log(Response);
+      } catch(error) {
+
+      }
+    }
+  }
+};
 // import $axios from "@/requests";
 // export default {
 //   components: {
@@ -60,8 +93,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  /* display: flex; */
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   background: url("~images/content/up-tablets.png") center center / cover
@@ -82,6 +114,7 @@
   font-size: 36px;
   text-align: center;
   font-weight: 600;
+  margin-bottom: 5%;
 }
 
 .login__content {
@@ -92,9 +125,43 @@
   }
 }
 
+.login__title {
+  margin-left: 40px;
+  opacity: .5;
+}
+
 .login__row {
-  margin-bottom: 35px;
   text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.login__input {
+  width: 100%;
+  margin-left: 10px;
+  border: transparent;
+  text-decoration: none;
+}
+
+.line__input {
+  width: 100%;
+  margin-bottom: 5%;
+}
+
+.login__user-icon {
+  width: 25px;
+  height: 25px;
+  display: block;
+  background: svg-load('user.svg' fill=$text-color) center center / contain no-repeat;
+  opacity: .5;
+}
+
+.login__pass-icon {
+  width: 25px;
+  height: 25px;
+  display: block;
+  background: svg-load('key.svg' fill=$text-color) center center / contain no-repeat;
+  opacity: .5;
 }
 
 .login__btn {
@@ -108,7 +175,7 @@
   width: 100%;
   padding: 30px;
   background-image: linear-gradient(to right, #ad00ed, #5500f2);
-  border-radius: 40px 0 40px;
+  border-radius: 40px 6px 40px;
   color: #fff;
   text-transform: uppercase;
   font-weight: bold;
@@ -120,6 +187,7 @@
 }
 
 .login__form {
+  position: relative;
   width: 563px;
   padding: 50px 77px 60px;
   background: #fff;
@@ -131,6 +199,20 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+}
+
+.login__btn-x {
+  position: absolute;
+  border: none;
+  top: 20px;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  display: block;
+  background: svg-load('remove.svg' fill=$text-color) center center / contain no-repeat;
+  &:hover {
+    background: svg-load('remove.svg' fill=lightgreen) center center / contain no-repeat;
   }
 }
 </style>

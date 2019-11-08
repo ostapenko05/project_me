@@ -1,60 +1,26 @@
 <template lang="pug">
   div.root-wrapper-container
     div.root-container
-      headeradmin
-      router-view
-      tabsadmin
-      aboutadmin
-
       .content-container
-        .works__admin
-        worksadmin
-        .reviews__admin
-        reviewsadmin
-
-    div.login__admin
-      loginadmin
-        //-   .works-section
-        //-     .container
-        //-       h1.page-title Блок "Мои работы"
-        //- main.content-container
-        //-   button.default-btn-container.btn-decorator
-        //-     .btn-file-container
-        //-     .btn-file-fake.btn-decorator
-        //-   input.btn-file-input
-
-
-        //-   //- label.input
-        //-   //-   .input__title
-        //-   //-     input.input__elem.field__elem
-        //-   //-       .input__error-tooltip
-        //-   //- label.textarea
-        //-   //-   .input__title
-        //-   //-     textarea.textarea__elem.field__elem
-        //-   //-       .input__error-tooltip
-        //- div.input__error-tooltip-container
-        
-
-  
+      headeradmin
+      tabsadmin
+      router-view
+      //- .modal-section
+      //- loginadmin
+     
 </template>
 
 <script>
 import headeradmin from './components/header';
 import tabsadmin from './components/tabs';
-import aboutadmin from './components/pages/about';
-import loginadmin from './components/pages/login';
-import worksadmin from './components/pages/works';
-import reviewsadmin from './components/pages/reviews';
+// import loginadmin from './components/pagelogin';
 
 export default {
   name: "app",
   components: {
     headeradmin,
     tabsadmin,
-    aboutadmin,
-    loginadmin,
-    worksadmin,
-    reviewsadmin
+    // loginadmin,
   },
   data () {
     return {
@@ -106,8 +72,9 @@ button {
   width: 100%;
   height: 100vh;
   z-index: -20;
+  margin-top: 20px;
   background: url("~images/content/up-tablets.png") center center no-repeat / cover;
-  opacity: .3;
+  /* opacity: .3; */
   @include phones {
     padding-top: 30px;
   }
@@ -117,30 +84,4 @@ button {
   font-size: 21px;
   font-weight: bold;
 }
-
-
-/// input-error
-
- /* .input__error-tooltip-container {
-  z-index: 100;
-  background: blueviolet;
-  color: #fff;
-  padding: 12px 20px;
-  font-size: 14px;
-  white-space: nowrap;
-  &:before {
-    content: "";
-    display: block;
-    width: 0;
-    height: 0;
-    border: 10px solid transparent;
-    border-top: 0;
-    border-bottom-color: red;
-    border-bottom-width: 7px;
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-} */
 </style>

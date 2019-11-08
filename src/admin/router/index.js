@@ -29,18 +29,6 @@ const routes = [{
 
 export default new VueRouter({ routes });
 
-
-
-
-
-// export default router;
-// import roytes from 'routes'
-
-
-
-
-
-
 // import Vue from "vue";
 // import VueRouter from "vue-router";
 // import axios from "axios";

@@ -1,7 +1,7 @@
 <template lang="pug">
-  //- .reviews-section
-  //-   .container
-  //-     h1.page-title Блок "Отзывы"
+  .reviews-section
+    .container
+      h1.page-title Блок "Отзывы"
 
   //-   .reviews-container
   //-     .container.card
