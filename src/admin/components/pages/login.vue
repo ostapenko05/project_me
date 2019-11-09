@@ -9,7 +9,7 @@
         .login__title Логин
         .login__row
           .login__user-icon
-          app-input.login__input(
+          input.login__input(
             title="Логин"
             icon="user"
             v-model="user.name"
@@ -18,7 +18,7 @@
         .login__title Пароль
         .login__row
           .login__pass-icon
-          app-input.login__input(
+          input.login__input(
             title="Пароль"
             icon="key"
             type="password"
