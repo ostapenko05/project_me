@@ -9,7 +9,7 @@
         .login__title Логин
         .login__row
           .login__user-icon
-          input.login__input(
+          app-input.login__input(
             title="Логин"
             icon="user"
             v-model="user.name"
@@ -18,7 +18,7 @@
         .login__title Пароль
         .login__row
           .login__pass-icon
-          input.login__input(
+          app-input.login__input(
             title="Пароль"
             icon="key"
             type="password"
@@ -33,12 +33,12 @@
 </template>
 
 <script>
-import $axios from '../../requests';
+import $axios from "../../requests";
 export default {
   components: {
     appInput: () => import("../input.vue")
   },
-  data:() => ({
+  data: () => ({
     user: {
       name: "",
       password: "",
@@ -46,12 +46,11 @@ export default {
   }),
   methods: {
     async login() {
+      console.log(response);
       try {
-        const reponse = await $axios.post('./login.vue', this.user);
-        console.log(Response);
-      } catch(error) {
-
-      }
+        const reponse = await $axios.post("./login.vue", this.user);
+        console.log(response);
+      } catch (error) {}
     }
   }
 };
@@ -78,7 +77,7 @@ export default {
 //         $axios.defaults.headers["Authorization"] = `Bearer ${token}`;
 //         this.$router.replace("/");
 //       } catch (error) {
-//         error 
+//         error
 //       }
 //     }
 //   }
@@ -127,7 +126,7 @@ export default {
 
 .login__title {
   margin-left: 40px;
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .login__row {
@@ -140,7 +139,9 @@ export default {
   width: 100%;
   margin-left: 10px;
   border: transparent;
+  outline: none;
   text-decoration: none;
+  font-weight: 700;
 }
 
 .line__input {
@@ -152,16 +153,17 @@ export default {
   width: 25px;
   height: 25px;
   display: block;
-  background: svg-load('user.svg' fill=$text-color) center center / contain no-repeat;
-  opacity: .5;
+  background: svg-load("user.svg" fill=$text-color) center center / contain no-repeat;
+  opacity: 0.5;
 }
 
 .login__pass-icon {
   width: 25px;
   height: 25px;
   display: block;
-  background: svg-load('key.svg' fill=$text-color) center center / contain no-repeat;
-  opacity: .5;
+  background: svg-load("key.svg" fill=$text-color) center center / contain
+    no-repeat;
+  opacity: 0.5;
 }
 
 .login__btn {
@@ -210,9 +212,11 @@ export default {
   width: 20px;
   height: 20px;
   display: block;
-  background: svg-load('remove.svg' fill=$text-color) center center / contain no-repeat;
+  background: svg-load("remove.svg" fill=$text-color) center center / contain
+    no-repeat;
   &:hover {
-    background: svg-load('remove.svg' fill=lightgreen) center center / contain no-repeat;
+    background: svg-load("remove.svg" fill=lightgreen) center center / contain
+      no-repeat;
   }
 }
 </style>

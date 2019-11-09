@@ -5,22 +5,18 @@
       headeradmin
       tabsadmin
       router-view
-      //- .modal-section
-      //- loginadmin
      
 </template>
 
 <script>
 import headeradmin from './components/header';
 import tabsadmin from './components/tabs';
-// import loginadmin from './components/pagelogin';
 
 export default {
   name: "app",
   components: {
     headeradmin,
     tabsadmin,
-    // loginadmin,
   },
   data () {
     return {
