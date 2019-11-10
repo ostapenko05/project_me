@@ -74,7 +74,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url("~images/content/up-tablets.png") center center / cover
+  background: url("./../../../images/content/up-tablets.png") center center / cover
     no-repeat;
   &:before {
     content: "";
@@ -132,7 +132,7 @@ export default {
   width: 25px;
   height: 25px;
   display: block;
-  background: svg-load("user.svg" fill=$text-color) center center / contain no-repeat;
+  background: svg-load("./../../../images/icons/user.svg" fill=$text-color) center center / contain no-repeat;
   opacity: 0.5;
 }
 
@@ -140,7 +140,7 @@ export default {
   width: 25px;
   height: 25px;
   display: block;
-  background: svg-load("key.svg" fill=$text-color) center center / contain
+  background: svg-load("./../../../images/icons/key.svg" fill=$text-color) center center / contain
     no-repeat;
   opacity: 0.5;
 }
@@ -191,10 +191,10 @@ export default {
   width: 20px;
   height: 20px;
   display: block;
-  background: svg-load("remove.svg" fill=$text-color) center center / contain
+  background: svg-load("./../../../images/icons/remove.svg" fill=$text-color) center center / contain
     no-repeat;
   &:hover {
-    background: svg-load("remove.svg" fill=lightgreen) center center / contain
+    background: svg-load("./../../../images/icons/remove.svg" fill=lightgreen) center center / contain
       no-repeat;
   }
 }

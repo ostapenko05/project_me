@@ -180,7 +180,6 @@ export default {
   width: 20px;
   height: 20px;
   vertical-align: center;
-  /* margin-right: 0.2rem; */
   border-radius: 0.1rem;
   cursor: pointer;
 
@@ -246,81 +245,3 @@ export default {
   transform: rotate(-45deg);
 }
 </style>
-       //- ul.skill-list
-        //-   li.skill-list__item
-        //-     .skill__name 
-        //-       .skill__title.skill__title-new Название новой группы
-        //-       .skill__title-control
-        //-         .control__check
-        //-           div.radio
-        //-             label.checkbox
-        //-               input(type="checkbox").checkbox__input(checked)
-        //-               span.checkbox__mark
-        //-         .control__x
-        //-           a(href="#").menu__hover-button
-        //-             span.menu__hover-line.menu__hover-line_active
-        //-     hr.line-1
-        //-     hr.line-2
-        //-     button.about-page__butn
-
-        //-   li.skill-list__item
-        //-     .skill__name 
-        //-       .skill__title Workflow
-        //-       .skill__title-control
-        //-         .control__check
-        //-           div.radio
-        //-             label.checkbox
-        //-               input(type="checkbox").checkbox__input(checked)
-        //-               span.checkbox__mark
-        //-         .control__x
-        //-           a(href="#").menu__hover-button
-        //-             span.menu__hover-line.menu__hover-line_active
-        //-     hr.line-1
-        //-     hr.line-2
-        //-     button.about-page__butn
-        //-   li.skill-list__item
-        //-     .skill__name 
-        //-       .skill__title FrontEnd
-        //-       .skill__title-control
-        //-         .control__check
-        //-           div.radio
-        //-             label.checkbox
-        //-               input(type="checkbox").checkbox__input(checked)
-        //-               span.checkbox__mark
-        //-         .control__x
-        //-           a(href="#").menu__hover-button
-        //-             span.menu__hover-line.menu__hover-line_active
-        //-     hr.line-1
-        //-     hr.line-2
-        //-     .skill__content
-        //-       ul.skill__content-list
-        //-         li
-
-        //-     button.about-page__butn
-            
-            
-            
-             
-  //- .about-page-container
-  //-   .container
-  //-     .about-page__title
-  //-       h1.page-title Обо мне
-  //-       button.about-page__add-new(
-  //-         @click="showAddingForm = true"
-  //-         v-if="showAddingForm === false"
-  //-       ) Добавить группу
-
-  //-   .about-page__content
-  //-     .container.container--mobile-wide
-  //-       ul.skill-list
-  //-         li.skill-list__item(v-if="showAddingForm")
-  //-           skills-add(
-  //-           )
-  //-         li.skill-list__item(
-  //-           v-for="category in categories"
-  //-           :key="category.id"
-  //-         )
-  //-           skills-group(
-  //-             :category="category"
-  //-             :skills="filterSkillsByCategoryId(category.id)"
-  //-           )
