@@ -7,17 +7,17 @@ export default {
     actions: {
         async addCategory(store, title) {
             try {
-                await this.$axios.post("/categories", { title: title });
+                await this.$axios.post("./categories.js", { title });
             } catch (error) {
-                throw new Error(error.response.data.error || error.response.data.message)
+                throw new Error(
+                    error.response.data.error || error.response.data.message
+                );
             }
-
         },
-        fetchCategories(store, ) {
-
-        }
+        // fetchCategories(store, ) {
     }
 };
+
 //     actions: {
 //         async addNewSkillGroup({ commit }, groupTitle) {
 //             try {
