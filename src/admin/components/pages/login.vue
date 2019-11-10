@@ -10,8 +10,9 @@
         .login__row
           .login__user-icon
           input.login__input(
-            title="Логин"
-            icon="user"
+            title="Логин",
+            type="text",
+            icon="user",
             v-model="user.name"
           )
         hr.line__input
@@ -19,9 +20,9 @@
         .login__row
           .login__pass-icon
           input.login__input(
-            title="Пароль"
-            icon="key"
-            type="password"
+            title="Пароль",
+            icon="key",
+            type="text",
             v-model="user.password"
           )
         hr.line__input
@@ -35,53 +36,31 @@
 <script>
 import $axios from "../../requests";
 export default {
-  components: {
-    appInput: () => import("../input.vue")
-  },
   data: () => ({
     user: {
       name: "",
-      password: "",
+      password: ""
     }
   }),
   methods: {
     async login() {
-      console.log(response);
       try {
-        const reponse = await $axios.post("./login.vue", this.user);
-        console.log(response);
-      } catch (error) {}
+        // const reponse = await $axios.post("/login", this.user);
+        // const token = response.data.token;
+        const {
+          data: {token}
+        } = await $axios.post('token', token);
+        
+        this.$router.replace("/")
+        localStorage.setItem("token", token);
+        $axios.defaults.headers["Authorization"] = `Bearer ${token}`;
+      } catch (error) {
+        alert('такой пользователь не найден')
+        /// вывести модалку при ошибки что такого пользователя не найдено.
+      }
     }
   }
 };
-// import $axios from "@/requests";
-// export default {
-//   components: {
-//     appInput: () => import("components/input.vue")
-//   },
-//   data() {
-//     return {
-//       user: {
-//         name: "admin",
-//         password: "admin"
-//       }
-//     };
-//   },
-//   methods: {
-//     async login() {
-//       try {
-//         const {
-//           data: { token }
-//         } = await $axios.post("/login", this.user);
-//         localStorage.setItem("token", token);
-//         $axios.defaults.headers["Authorization"] = `Bearer ${token}`;
-//         this.$router.replace("/");
-//       } catch (error) {
-//         error
-//       }
-//     }
-//   }
-// };
 </script>
 
 <style lang="postcss">

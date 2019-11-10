@@ -1,9 +1,13 @@
 import axios from "axios";
 
-// const token = localStorage.getItem("token");
+const token = localStorage.getItem("token");
 
 axios.defaults.baseURL = "https://webdev-api.loftschool.com";
-// axios.defaults.headers["Authorization"] = `Bearer ${token}`;
+axios.defaults.headers["Authorization"] = `Bearer ${token}`;
+
+
+export default axios;
+
 
 // axios.interceptors.response.use(
 //     function(response) {
@@ -24,5 +28,3 @@ axios.defaults.baseURL = "https://webdev-api.loftschool.com";
 //         return Promise.reject(error);
 //     }
 // );
-
-export default axios;

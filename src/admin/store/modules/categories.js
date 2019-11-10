@@ -7,10 +7,13 @@ export default {
     actions: {
         async addCategory(store, title) {
             try {
-                await this.$axios.post("/categories", title);
+                await this.$axios.post("/categories", { title: title });
             } catch (error) {
                 throw new Error(error.response.data.error || error.response.data.message)
             }
+
+        },
+        fetchCategories(store, ) {
 
         }
     }
