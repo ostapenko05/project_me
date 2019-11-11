@@ -4,26 +4,49 @@
       .about-page__title
         h1.page-title Блок "Обо мне"
         button.about-page__add-new() Добавить группу
-      form(@submit.prevent="addNewCategory")
-       input(type="text" v-model="title" placeholder="Имя категории")
-       input(type="submit" placeholder="Добавить")
     .about-page__content
       .container.container--mobile-wide
         ul.slill-list
           li.skill-list__item()
- 
+            form(@submit.prevent="addNewCategory")
+              .skill__name-wrapper
+              input(type="text" v-model="title" placeholder="Название новой группы").skill__name-input
+              button(type="submit").skill__name
+            //- hr.skill__name-line
+            //- .skill__name-control
+            //-   button(type="button").slill__btn-checked
+            //-   button(type="button").slill__btn-x
+            //- hr.skill__line-opacity
+            //- .skill__input
+            //-   input(type="text"  placeholder="Новый навык").skill__name-input
+            //-   input(type="text"  placeholder="100%").skill__name-input
+            //-   button(type="submit").about-page__add-new
+            hr
+
 </template>
 
 <script>
 
-import { mapActions } from "vuex";
+import { mapActions, mapState } from "vuex";
 
 export default {
+  components: {
+    skillsGroup: () => import("../skills-group")
+  },
   data: () => ({
     title: ""
   }),
+
+  created() {
+    this.fetchCategories();
+  },
+  computed: {
+    ...mapState("categories", {
+      categories: state => state.categories
+    }),
+  },
   methods: {
-    ...mapActions("categories", ["addCategory"]),
+    ...mapActions("categories", ["addCategory", "fetchCategories"]),
     async addNewCategory() {
       try {
         await this.addCategory(this.title)
@@ -137,7 +160,7 @@ export default {
     opacity: 0.5;
   }
 }
-
+/* 
 .line-1 {
   width: 60%;
   margin-left: 30px;
@@ -243,5 +266,5 @@ export default {
 .menu__hover-line::after {
   top: 0;
   transform: rotate(-45deg);
-}
+} */
 </style>

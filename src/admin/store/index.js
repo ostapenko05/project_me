@@ -11,6 +11,6 @@ export default new Vuex.Store({
     modules: {
         categories,
         skills,
-        user
+        user,
     }
 });

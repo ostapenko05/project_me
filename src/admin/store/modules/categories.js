@@ -3,18 +3,30 @@ export default {
     state: {
         categories: []
     },
-    mutations: {},
+    mutations: {
+        SET_CATEGORIES(state, categories) {
+            state.categories = categories;
+        }
+    },
     actions: {
         async addCategory(store, title) {
             try {
-                await this.$axios.post("./categories.js", { title });
+                await this.$axios.post("/categories", { title: title });
+                a
             } catch (error) {
                 throw new Error(
                     error.response.data.error || error.response.data.message
                 );
             }
         },
-        // fetchCategories(store, ) {
+        async fetchCategories({ commit }) {
+            try {
+                const { data } = await this.$axios.get("/categories");
+                commit("SET_CATEGORIES", data);
+            } catch (error) {
+
+            }
+        }
     }
 };
 

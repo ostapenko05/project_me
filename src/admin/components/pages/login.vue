@@ -45,15 +45,17 @@ export default {
   methods: {
     async login() {
       try {
-        const response = await $axios.post("/login", this.user);
-        const token = response.data.token;
+        const {
+          data: {token}
+        } = await $axios.post("/login", this.user);
         
         localStorage.setItem("token", token);
         $axios.defaults.headers["Authorization"] = `Bearer ${token}`;
 
         this.$router.replace("/");
+        alert("Успешный вход в админку");
       } catch (error) {
-        // alert('такой пользователь не найден')
+        alert('такой пользователь не найден')
         /// вывести модалку при ошибки что такого пользователя не найдено.
       }
     }
