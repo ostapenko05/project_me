@@ -31,11 +31,14 @@ export default {
     ...mapActions("skills", ["removeSkill"]),
     async removeExistedSkill() {
       try {
-        await this.removeSkill(this.skill.id);
+        await this.removeSkill({
+          id: this.skill.id,
+          category: this.skill.category
+        });
       } catch (error) {
         
       }
-    },
+    }
   }
 };
 </script>

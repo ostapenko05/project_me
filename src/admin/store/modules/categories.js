@@ -18,9 +18,17 @@ export default {
                 return category;
             })
         },
-        REMOVE_SKILL(state, skill) {
-
-        },
+        REMOVE_SKILL(state, deletedSkill) {
+            console.log(staus);
+            state.categories = state.categories.map(category => {
+                if (category.id === deletedSkill.category) {
+                    category.skills = category.skills.filter(
+                        skill => skill.id !== deletedSkill.id
+                    );
+                }
+                return category;
+            });
+        }
     },
     actions: {
         async addCategory({ commit }, title) {

@@ -14,7 +14,7 @@ export default {
         async removeSkill({ commit }, skillId) {
             try {
                 const { data } = await this.$axios.delete(`/skills/${skillId}`);
-                commit("categories/REMOVE_SKILL", null, { root: true });
+                commit("categories/REMOVE_SKILL", skill.category, { root: true });
             } catch (error) {
 
             }

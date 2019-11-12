@@ -3,7 +3,7 @@
     h2 {{category.category}}
     hr
     table
-      skillsItem(
+      skillItem(
         v-for="skill in category.skills"
         :key="skill.id"
         :skill="skill"
@@ -33,7 +33,7 @@
 import { mapActions } from "vuex";
 export default {
   components: {
-    skillsItem: () => import("./skills-item")
+    skillItem: () => import("./skills-item")
   },
   props: {
     category: {
