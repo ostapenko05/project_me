@@ -1,10 +1,26 @@
 // import { generateStdError } from "../../helpers/errorHandler";
 
-// export default {
-//     namespaced: true,
-//     state: {
-//         skills: []
-//     },
+export default {
+    namespaced: true,
+    actions: {
+        async addSkill({ commit }, skill) {
+            try {
+                const { data } = await this.$axios.post('/skills', skill);
+                commit("categories/ADD_SKILL", data, { root: true });
+            } catch (error) {
+
+            }
+        },
+        async removeSkill({ commit }, skillId) {
+            try {
+                const { data } = await this.$axios.delete(`/skills/${skillId}`);
+                commit("categories/REMOVE_SKILL", null, { root: true });
+            } catch (error) {
+
+            }
+        },
+    }
+};
 //     mutations: {
 //         SET_SKILLS: (state, skills) => {
 //             state.skills = skills;

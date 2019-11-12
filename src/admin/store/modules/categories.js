@@ -6,13 +6,27 @@ export default {
     mutations: {
         SET_CATEGORIES(state, categories) {
             state.categories = categories;
-        }
+        },
+        ADD_CATEGORY(state, category) {
+            state.categories.unshift(category);
+        },
+        ADD_SKILL(state, newSkill) {
+            state.categories = state.categories.map(category => {
+                if (category.id === newSkill.category) {
+                    category.skills.push(newSkill);
+                }
+                return category;
+            })
+        },
+        REMOVE_SKILL(state, skill) {
+
+        },
     },
     actions: {
-        async addCategory(store, title) {
+        async addCategory({ commit }, title) {
             try {
-                await this.$axios.post("/categories", { title: title });
-                a
+                const { data } = await this.$axios.post("/categories", { title: title });
+                commit("ADD_CATEGORY", data);
             } catch (error) {
                 throw new Error(
                     error.response.data.error || error.response.data.message
@@ -21,7 +35,7 @@ export default {
         },
         async fetchCategories({ commit }) {
             try {
-                const { data } = await this.$axios.get("/categories");
+                const { data } = await this.$axios.get("/categories/214");
                 commit("SET_CATEGORIES", data);
             } catch (error) {
 

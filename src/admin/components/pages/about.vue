@@ -4,14 +4,21 @@
       .about-page__title
         h1.page-title Блок "Обо мне"
         button.about-page__add-new() Добавить группу
+      form(@submit.prevent="addNewCategory")
+        .skill__name-wrapper
+          input(type="text" v-model="title" placeholder="Название новой группы")
+          button(type="submit" placeholder="Добавить").skill__button
     .about-page__content
       .container.container--mobile-wide
         ul.slill-list
-          li.skill-list__item()
-            form(@submit.prevent="addNewCategory")
-              .skill__name-wrapper
-              input(type="text" v-model="title" placeholder="Название новой группы").skill__name-input
-              button(type="submit").skill__name
+          li.skill-list__item(v-for="category in categories" :key="category.id")
+            skills-group(
+              :category="category",
+            )
+            //- form(@submit.prevent="addNewCategory")
+            //-   .skill__name-wrapper
+            //-   input(type="text" v-model="title" placeholder="Название новой группы").skill__name-input
+            //-   button(type="submit").skill__name
             //- hr.skill__name-line
             //- .skill__name-control
             //-   button(type="button").slill__btn-checked
@@ -21,7 +28,7 @@
             //-   input(type="text"  placeholder="Новый навык").skill__name-input
             //-   input(type="text"  placeholder="100%").skill__name-input
             //-   button(type="submit").about-page__add-new
-            hr
+            //- hr
 
 </template>
 
@@ -159,6 +166,15 @@ export default {
   &:nth-child(0) {
     opacity: 0.5;
   }
+}
+
+.skill__button {
+  width: 100px;
+  height: 30px;
+  background: transparent;
+  /* color-text: #3f35cb; */
+  margin: 0 0;
+  border: solid #3f35cb;
 }
 /* 
 .line-1 {
