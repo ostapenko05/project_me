@@ -3,7 +3,7 @@
     h2 {{category.category}}
     hr
     table
-      skillItem(
+      skillsItem(
         v-for="skill in category.skills"
         :key="skill.id"
         :skill="skill"
@@ -33,7 +33,7 @@
 import { mapActions } from "vuex";
 export default {
   components: {
-    skillItem: () => import("./skills-item")
+    skillsItem: () => import("./skills-item")
   },
   props: {
     category: {
@@ -68,35 +68,6 @@ export default {
     }
   }
 };
-// import { mapActions } from "vuex";
-// export default {
-//   props: {
-//     category: Object,
-//     skills: Array,
-//   },
-//   data() {
-//     return {
-//       skill: {
-//         category: this.category.id,
-//         title: "",
-//         percent: ""
-//       }
-//     }
-//   },
-//   components: {
-//     skillsItem: () => import("../components/skills-item")
-//   },
-//   methods: {
-//     ...mapActions('skills', ['addSkill']),
-//     async addNewSkill() {
-//       try {
-//         await this.addSkill(this.skill);
-//       } catch (error) {
-//         // error
-//       }
-//     }
-//   }
-// };
 </script>
 
 <style lang="postcss" scored>

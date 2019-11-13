@@ -1,3 +1,11 @@
+const findRequiredCategory = (category, skill, cb) => {
+    if (category.id === skill.category) {
+        cb(category);
+    }
+
+    return category;
+};
+
 export default {
     namespaced: true,
     state: {
@@ -19,15 +27,29 @@ export default {
             })
         },
         REMOVE_SKILL(state, deletedSkill) {
-            console.log(staus);
-            state.categories = state.categories.map(category => {
+            const removeSkill = category => {
+                category.skills = category.skills.filter(
+                    skill => skill.id !== deletedSkill.id
+                );
+            };
+            const findRequiredCategory = category => {
                 if (category.id === deletedSkill.category) {
-                    category.skills = category.skills.filter(
-                        skill => skill.id !== deletedSkill.id
-                    );
+                    removeSkill(category);
                 }
                 return category;
-            });
+            };
+            state.categories = state.categories.map(findRequiredCategory);
+        },
+        EDIT_SKILL(state, editedSkill) {
+            const editSkill = category => {
+                category.skills = category.skills.map(skill =>
+                    skill.id === editedSkill.id ? editedSkill : skill
+                );
+            };
+
+            state.categories = state.categories.map(category =>
+                findRequiredCategory(category, editedSkill, editSkill(category))
+            );
         }
     },
     actions: {
@@ -51,30 +73,3 @@ export default {
         }
     }
 };
-
-//     actions: {
-//         async addNewSkillGroup({ commit }, groupTitle) {
-//             try {
-//                 const response = await this.$axios.post("/categories", {
-//                     title: groupTitle
-//                 });
-//                 return response;
-//             } catch (error) {
-//                 throw new Error(
-//                     error.response.data.error || error.response.data.message
-//                 );
-//             }
-//         },
-//         async fetchCategories({ commit }) {
-//             try {
-//                 const response = await this.$axios.get("/categories");
-//                 commit("SET_CATEGORIES", response.data.reverse());
-//                 return response;
-//             } catch (error) {
-//                 throw new Error(
-//                     error.response.data.error || error.response.data.message
-//                 );
-//             }
-//         }
-//     }
-// };

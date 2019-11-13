@@ -1,24 +1,23 @@
 <template lang="pug">
-  tr()
+  tr(v-if="editMode === false")
     td {{skill.title}}
     td {{skill.percent}}
     td 
       button(type="button" @click="removeExistedSkill") удалить
-      button(type="button" ) изменить
+      button(type="button" @click="editMode = true") изменить
   
-  //- tr(v-else)
-  //-   td 
-  //-     input(type="text" v-model="editedSkill.title")
-  //-   td 
-  //-     input(type="text" v-model="editedSkill.percent")
-  //-   td 
-  //-     button(type="button" @click="save") сохранить
-  //-     button(type="button" @click="editmode = false") отменить
+  tr(v-else)
+    td 
+      input(type="text" v-model="editedSkill.title")
+    td 
+      input(type="text" v-model="editedSkill.percent")
+    td 
+      button(type="button" @click="editExistedSkill") сохранить
+      button(type="button" @click="editMode = false") отменить
 
 </template>
-
 <script>
-import { mapActions } from 'vuex';
+import { mapActions } from "vuex";
 export default {
   props: {
     skill: {
@@ -27,17 +26,29 @@ export default {
       required: true
     }
   },
+  data() {
+    return {
+      editMode: false,
+      editedSkill: {...this.skill}
+    }
+  },
   methods: {
-    ...mapActions("skills", ["removeSkill"]),
+    ...mapActions("skills", ["removeSkill", "editSkill"]),
+    async editExistedSkill() {
+      try {
+        await this.editSkill(this.editedSkill); 
+        this.editMode = false;
+      } catch (error) {
+        
+      }
+    },
     async removeExistedSkill() {
       try {
         await this.removeSkill({
           id: this.skill.id,
           category: this.skill.category
         });
-      } catch (error) {
-        
-      }
+      } catch (error) {}
     }
   }
 };
