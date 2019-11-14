@@ -15,21 +15,6 @@
             skills-group(
               :category="category",
             )
-            //- form(@submit.prevent="addNewCategory")
-            //-   .skill__name-wrapper
-            //-   input(type="text" v-model="title" placeholder="Название новой группы").skill__name-input
-            //-   button(type="submit").skill__name
-            //- hr.skill__name-line
-            //- .skill__name-control
-            //-   button(type="button").slill__btn-checked
-            //-   button(type="button").slill__btn-x
-            //- hr.skill__line-opacity
-            //- .skill__input
-            //-   input(type="text"  placeholder="Новый навык").skill__name-input
-            //-   input(type="text"  placeholder="100%").skill__name-input
-            //-   button(type="submit").about-page__add-new
-            //- hr
-
 </template>
 
 <script>

@@ -12,17 +12,17 @@
 </template>
 
 <script>
-// export default {
-//   data() {
-//     return {
-//       tabs: [
-//         { title: "Обо мне", href: "/" },
-//         { title: "Отзывы", href: "/reviews" },
-//         { title: "Работы", href: "/works" }
-//       ]
-//     };
-//   }
-// };
+export default {
+  data() {
+    return {
+      tabs: [
+        { title: "Обо мне", href: "/" },
+        { title: "Отзывы", href: "/reviews" },
+        { title: "Работы", href: "/works" }
+      ]
+    };
+  }
+};
 </script>
 
 
