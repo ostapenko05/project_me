@@ -1,21 +1,73 @@
+.maincontent {
+  position: relative;
+}
+
 .hero {
   position: relative;
   height: 100vh;
+}
+
+.pic__up-tablets {
+  display: none;
+  position: absolute;
+  @include tablets {
+    display: block;
+  }
+  @include phones {
+    display: none;
+  }
+}
+
+.pic__up-phones {
+  display: none;
+  position: absolute;
+  width: 100%;
+  @include phones {
+    display: block;
+  }
+}
+
+.parallax {
+  overflow: hidden;
+  @include phones {
+    overflow: auto;
+  }
+}
+
+.pic__up-desktop {
+  display: none;
+  opacity: .2;
+  @include desktopHd {
+    display: block;
+    position: absolute;
+    width: 100%;
+    z-index: -200;
+    height: 40%;
+    opacity: .1;
+  }
+  @include phones {
+    display: none;
+  }
+}
+
+.parallax__layer {
+  position: absolute;
+  z-index: -100;
+  @include tablets {
+    display: none;
+  }
+}
+
+.layer__img {
+  object-fit: cover;
+  will-change: transform;
+  width: 100%;
 }
 
 .logo {
   font-family: sans-serif;
   font-size: 35px;
   font-weight: 800;
-}
-
-.paralax__pic {
-  position: absolute;
-  width: 100%;
-  height: 170vh;
-  @include desktop {
-    height: 160vh;
-  }
 }
 
 .hero__container {
@@ -46,11 +98,13 @@
   justify-content: center;
 }
 
-
 .hero__btns {
   display: flex;
   justify-content: center;
   padding: 50px 0;
+  @include phones {
+    display: none;
+  }
 }
 
 .scroll-down-btns {
@@ -59,7 +113,7 @@
 
 .scroll {
   display: block;
-  fill: rgb(70,77,98);
+  fill: rgb(70, 77, 98);
   width: 5px;
   height: 5px;
 }

@@ -1,22 +1,26 @@
 .socials {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  @include phones {
+    display: none;
   }
-  
-  .socials__item {
-    margin-right: 40px;
-  
-    &:last-child {
-      margin-right: 0;
-    }
+}
+
+.socials__item {
+  margin-right: 40px;
+
+  &:last-child {
+    margin-right: 0;
   }
-  
-  .socials__icon {
-    width: 28px;
-    height: 31px;
-    display: block;
-    fill: rgb(70,77,98);
-    &:hover {
-      fill: #c5f5d5;
-    }
+}
+
+.socials__icon {
+  width: 28px;
+  height: 31px;
+  display: block;
+  fill: rgb(70, 77, 98);
+
+  &:hover {
+    fill: #c5f5d5;
   }
+}

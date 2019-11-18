@@ -1,96 +1,177 @@
 .form {
-    position: relative;
-    height: 100vh;
-    margin: 0 5%;
+  position: relative;
+  padding: 10% 40% 30% 20%;
+  @include tablets {
+    padding: 10% 5% 30% 5%;
+  }
+  @include phones {
+    padding: 40% 5% 35% 5%;
+  }
 }
 
 .form__title {
-    font-weight: 700;
-    font-size: 36px;
-    font-family: sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  font-family: sans-serif;
+  @include phones {
+    font-size: 24px;
+    text-align: center;
+  }
 }
 
 .form__inputs {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
+  @include phones {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .input__back {
-    background: transparent;
+  background: transparent;
 }
 
 .form__input {
-    width: 50%;
-    margin: 5% 2% 5% 0;
-    border-bottom: 2px #ccc;
+  width: 50%;
+  margin: 5% 2% 5% 0;
+  border-bottom: 2px #ccc;
+
+  &::-webkit-input-placeholder {
+    margin-left: 20px;
+    @include phones {
+      text-align: center;
+    }
+  }
+  @include phones {
+    width: 100%;
+  }
 }
 
 .form__input-text {
-    border: 0;
-    width: 92%;
-    background: transparent;
+  border: 0;
+  width: 60%;
+  background: transparent;
+
+  &::-webkit-input-placeholder {
+    font-size: 14px;
+    font-weight: 700;
+    color: $text-color;
+    text-indent: 30px;
+    vertical-align: middle;
+  }
+  @include phones {
+    width: 100%;
+  }
 }
 
 .input__elem {
-    border: 4px transparent;
+  border: 4px transparent;
+  width: 80%;
+  height: 30px;
+
+  &::-webkit-input-placeholder {
+    font-size: 14px;
+    font-weight: 700;
+    color: $text-color;
+    text-indent: 30px;
+    text-align: center;
+  }
+  @include phones {
     width: 100%;
-    height: 30px;
+  }
 }
 
 .input__elem-text {
-    height: 40px;
+  height: 40px;
+
+  &::-webkit-input-placeholder {
+    font-size: 14px;
+    font-weight: 700;
+    color: $text-color;
+    text-indent: 30px;
+    text-align: center;
+  }
+  @include tablets {
+    width: 50%;
+  }
+  @include phones {
+    width: 100%;
+  }
 }
 
 .form__text {
-    position: relative;
-    font-family: sans-serif;
-    font-size: 15px;
-    opacity: .5;
-    margin-bottom: 3%;
-    background: transparent;
+  position: relative;
+  font-family: sans-serif;
+  font-size: 15px;
+  opacity: .5;
+  margin-bottom: 3%;
+  background: transparent;
+  @include phones {
+    text-align: center;
+  }
 }
 
 .iconed__user {
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    fill: #ccc;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  fill: #ccc;
 }
 
 .iconed__mail {
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    fill: #ccc;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  fill: #ccc;
 }
 
 .form__line {
-    width: 100%;
-    height: 2px;
-    border: solid 1px #ccc;
+  width: 100%;
+  height: 1px;
+  border: solid 1px #ccc;
+  background: #ccc;
+  @include phones {
+    border: solid .5px black;
+    background: black;
+    margin-bottom: 10%;
+  }
 }
 
 .form__line-text {
-    width: 98%;
-    height: 2px;
-    border: solid 1px #ccc;
+  width: 98%;
+  height: 1px;
+  border: solid 1px #ccc;
+  background: #ccc;
+  margin-bottom: 5%;
+  @include phones {
+    border: solid .5px black;
+    background: black;
     margin-bottom: 10%;
+  }
 }
 
 .form__btn {
-    border: 0;
+  border: 0;
+  @include tablets {
+    text-align: center;
+  }
 }
 
 .form__btn-style {
-    font-family: sans-serif;
-    font-size: 25px;
-    color: #ffffff;
-    font-style: normal;
-    border: none;
-    padding: 26px 110px;
-    border-radius: 33px 5px;
-    background: linear-gradient(90deg, violet, blue);
-    &:hover {
-        background: #c5f5d5;
-    }
+  font-family: sans-serif;
+  font-size: 25px;
+  color: #ffffff;
+  font-style: normal;
+  border: none;
+  padding: 26px 110px;
+  border-radius: 33px 5px;
+  background: linear-gradient(90deg, violet, blue);
+
+  &:hover {
+    background: #c5f5d5;
+  }
+  @include phones {
+    padding: 17px 80px;
+  }
 }
